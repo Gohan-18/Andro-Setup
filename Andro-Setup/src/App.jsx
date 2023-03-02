@@ -1,10 +1,15 @@
-import React from "react"
+import React from "react";
+import { Button, Container, Typography } from "@mui/material"
 
 function App() {
 
   return (
     <>
-    <h1>Hello world!!</h1>
+    <Container maxWidth="lg">
+      <Button variant="contained" >
+        Hello world
+      </Button>
+    </Container>
     </>
   )
 }
