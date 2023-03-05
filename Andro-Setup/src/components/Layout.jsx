@@ -1,4 +1,4 @@
-import { createTheme, CssBaseline, ThemeProvider } from '@mui/material'
+import { Container, createTheme, CssBaseline, ThemeProvider } from '@mui/material'
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Navbar from './Navbar'
@@ -14,11 +14,13 @@ const Layout = () => {
   return (
     <>
     <ThemeProvider theme={theme} >
-    <Navbar/>
-    <div>
-        <CssBaseline/>
-        <Outlet/>
-    </div>
+    <Container maxWidth='lg' >
+        <Navbar/>
+        <div>
+            <CssBaseline/>
+            <Outlet/>
+        </div>
+    </Container>
     </ThemeProvider>
     </>
   )
