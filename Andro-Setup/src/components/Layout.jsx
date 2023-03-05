@@ -1,7 +1,7 @@
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material'
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Header from './Header'
+import Navbar from './Navbar'
 
 const Layout = () => {
 
@@ -14,7 +14,7 @@ const Layout = () => {
   return (
     <>
     <ThemeProvider theme={theme} >
-    <Header/>
+    <Navbar/>
     <div>
         <CssBaseline/>
         <Outlet/>
