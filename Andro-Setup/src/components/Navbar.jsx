@@ -30,7 +30,7 @@ const Navbar = () => {
           }}
         >
           <Typography
-            sx={{ fontSize: "25px", fontWeight: "600", color: "#424242" }}
+            sx={{ fontSize: "25px", fontWeight: "600", color: "#424242", cursor: 'pointer' }}
           >
             Andro/Setup
           </Typography>
@@ -52,7 +52,8 @@ const Navbar = () => {
               textAlign: 'center',
               fontSize: "8px",
               color: "#ffffff",
-              lineHeight: '6px'
+              lineHeight: '6px',
+              cursor: 'pointer'
             }}
           >
            Hire Me!!
@@ -76,8 +77,8 @@ const Navbar = () => {
                   cursor: "pointer",
                   color: !currentItm ? "#424242" : "#5A47AB",
                   fontSize: "14px",
-                  fontWeight: "500",
                   textTransform: "uppercase",
+                  fontWeight: '700'
                 }}
                 key={item}
               >
