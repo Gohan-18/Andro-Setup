@@ -30,34 +30,55 @@ const Navbar = () => {
           }}
         >
           <Typography
-            sx={{ fontSize: "25px", fontWeight: "600", color: "#424242", cursor: 'pointer' }}
+            sx={{
+              fontSize: "25px",
+              fontWeight: "600",
+              color: "#424242",
+              cursor: "pointer",
+            }}
           >
             Andro/Setup
           </Typography>
-          <Box sx={{
-            backgroundColor: "#5A47AB",
-            color: "#FFFFFF",
-            py: '5px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            height: 'auto',
-            px: '10px',
-            borderLeft:'1px dotted #666',
-            cursor: 'pointer'
-          }} >
-          <LinkedInIcon sx={{height: '15px', width: '15px',}} />
-          <Typography
-            sx={{
-              ml: '4px',
-              textAlign: 'center',
-              fontSize: "8px",
-              color: "#ffffff",
-              lineHeight: '6px',
+          <Box
+            sx={{ 
+              backgroundColor: "#5A47AB",
+              color: "#FFFFFF",
+              py: "5px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              height: "auto",
+              pr: "10px",
+              pl: '2px',
+              cursor: "pointer",
+              position: "relative",
+              ml:'5px',
+              borderRadius: '2px'
             }}
           >
-           Hire Me!!
-          </Typography>
+            <Box
+              sx={{
+                height: "17px",
+                width: "17px",
+                backgroundColor: "#5A47AB",
+                position: "absolute",
+                left: -8,
+                transform: "rotate(45deg)",
+                zIndex: -1,
+              }}
+            />
+            <LinkedInIcon sx={{ height: "15px", width: "15px" }} />
+            <Typography
+              sx={{
+                ml: "4px",
+                textAlign: "center",
+                fontSize: "8px",
+                color: "#ffffff",
+                lineHeight: "6px",
+              }}
+            >
+              Hire Me!!
+            </Typography>
           </Box>
         </Box>
         <Box
@@ -78,7 +99,7 @@ const Navbar = () => {
                   color: !currentItm ? "#424242" : "#5A47AB",
                   fontSize: "14px",
                   textTransform: "uppercase",
-                  fontWeight: '700'
+                  fontWeight: "700",
                 }}
                 key={item}
               >
