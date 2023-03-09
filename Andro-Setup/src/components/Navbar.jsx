@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const Navbar = () => {
-  const [activeFilter, setActiveFilter] = useState("Home");
+  const [activeFilter, setActiveFilter] = useState("");
 
   useEffect(() => {
     setActiveFilter("Home");
@@ -43,7 +43,8 @@ const Navbar = () => {
             justifyContent: 'center',
             height: 'auto',
             px: '10px',
-            borderLeft:'1px dotted #666'
+            borderLeft:'1px dotted #666',
+            cursor: 'pointer'
           }} >
           <LinkedInIcon sx={{height: '15px', width: '15px',}} />
           <Typography
@@ -53,7 +54,6 @@ const Navbar = () => {
               fontSize: "8px",
               color: "#ffffff",
               lineHeight: '6px',
-              cursor: 'pointer'
             }}
           >
            Hire Me!!
