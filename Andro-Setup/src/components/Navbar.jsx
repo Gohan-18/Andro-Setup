@@ -53,7 +53,7 @@ const Navbar = () => {
               cursor: "pointer",
               position: "relative",
               ml:'5px',
-              borderRadius: '2px'
+              borderRadius: '2px',
             }}
           >
             <Box
