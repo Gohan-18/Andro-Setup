@@ -20,7 +20,7 @@ const Navbar = () => {
           justifyContent: "space-between",
           alignItems: "center",
           height: "100px",
-          border: '2px solid black'
+          // border: '2px solid black'
         }}
       >
         <Box
