@@ -1,9 +1,9 @@
 import { Box, Button, CardMedia, Typography } from "@mui/material";
 import React from "react";
 import HeroImg from "../assets/Hero-Img.png";
-import InstagramIcon from '@mui/icons-material/Instagram';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from "@mui/icons-material/Instagram";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const Header = () => {
   return (
@@ -71,10 +71,62 @@ const Header = () => {
               you like to yours today!!
             </Typography>
           </Box>
-          <Box sx={{display: 'flex', alignItems: 'start', justifyContent: 'start', width: '100%', height: '100%', py: '30px', gap: 3}} >
-            <Button variant="contained" startIcon={<InstagramIcon />} sx={{width: '201px', height: '60px', backgroundColor: '#E1306C'}}>Instagram</Button>
-            <Button variant="contained" startIcon={<TwitterIcon />} sx={{width: '201px', height: '60px', backgroundColor: '#1DA1F2'}}>Twitter</Button>
-            <Button variant="contained" startIcon={<LinkedInIcon />} sx={{width: '201px', height: '60px', backgroundColor: '#0072b1 '}}>LinkedIn</Button>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "start",
+              justifyContent: "start",
+              width: "100%",
+              height: "100%",
+              py: "30px",
+              gap: 3,
+            }}
+          >
+            <Button
+              variant="contained"
+              startIcon={<InstagramIcon />}
+              sx={{
+                width: "201px",
+                height: "60px",
+                // px: '40px',
+                // py: '15px',
+                backgroundColor: "#E1306C",
+                "&:hover": {
+                    backgroundColor: '#c3295c'
+                }
+              }}
+            >
+              Instagram
+            </Button>
+            <Button
+              variant="contained"
+              startIcon={<TwitterIcon />}
+              sx={{
+                width: "201px",
+                height: "60px",
+                backgroundColor: "#1DA1F2",
+                "&:hover": {
+                    backgroundColor: '#187cbb'
+                }
+              }}
+            >
+              Twitter
+            </Button>
+            <Button
+              variant="contained"
+              startIcon={<LinkedInIcon />}
+              sx={{
+                width: "201px",
+                height: "60px",
+                backgroundColor: "#0072b1 ",
+                "&:hover": {
+                    backgroundColor: '#01669d'
+                }
+              }}
+            >
+              LinkedIn
+              {/* 01669d */}
+            </Button>
           </Box>
         </Box>
         <Box

@@ -14,12 +14,16 @@ const Navbar = () => {
       <Container
         maxWidth="lg"
         sx={{
-          position: 'fixed',
+          position: "fixed",
           display: "flex",
           width: "100%",
           justifyContent: "space-between",
           alignItems: "center",
           height: "100px",
+          backgroundColor: "#fff",
+          top: '0',
+          left: '0',
+          right: '0'
           // border: '2px solid black'
         }}
       >
@@ -32,6 +36,7 @@ const Navbar = () => {
             gap: 2,
           }}
         >
+
           <Typography
             sx={{
               fontSize: "25px",
@@ -42,8 +47,9 @@ const Navbar = () => {
           >
             Andro/Setup
           </Typography>
+
           <Box
-            sx={{ 
+            sx={{
               backgroundColor: "#5A47AB",
               color: "#FFFFFF",
               py: "5px",
@@ -52,11 +58,11 @@ const Navbar = () => {
               justifyContent: "center",
               height: "auto",
               pr: "10px",
-              pl: '2px',
+              pl: "2px",
               cursor: "pointer",
               position: "relative",
-              ml:'5px',
-              borderRadius: '2px',
+              ml: "5px",
+              borderRadius: "2px",
             }}
           >
             <Box
@@ -84,12 +90,14 @@ const Navbar = () => {
             </Typography>
           </Box>
         </Box>
+
         <Box
           sx={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             gap: 3,
+            
           }}
         >
           {["Home", "Portfolio", "Contact"].map((item) => {
