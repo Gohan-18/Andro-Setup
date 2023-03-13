@@ -11,13 +11,16 @@ const Navbar = () => {
 
   return (
     <>
-      <Box
+      <Container
+        maxWidth="lg"
         sx={{
+          position: 'fixed',
           display: "flex",
           width: "100%",
           justifyContent: "space-between",
           alignItems: "center",
           height: "100px",
+          border: '2px solid black'
         }}
       >
         <Box
@@ -108,7 +111,7 @@ const Navbar = () => {
             );
           })}
         </Box>
-      </Box>
+      </Container>
     </>
   );
 };
