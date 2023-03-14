@@ -79,18 +79,21 @@ const Header = () => {
               width: "100%",
               height: "100%",
               py: "30px",
-              gap: 3,
+              gap: 2,
+              flexWrap: 'wrap'
             }}
           >
+            <a href="https://www.instagram.com/prab_hat18" target="_blank" >
             <Button
               variant="contained"
               startIcon={<InstagramIcon />}
               sx={{
-                width: "201px",
+                width: "160px",
                 height: "60px",
-                // px: '40px',
+                // px: '25px',
                 // py: '15px',
                 backgroundColor: "#E1306C",
+                fontSize: '16px',
                 "&:hover": {
                     backgroundColor: '#c3295c'
                 }
@@ -98,13 +101,17 @@ const Header = () => {
             >
               Instagram
             </Button>
+            </a>
+
+            <a href="https://www.twitter.com/prab_hat18" target="_blank" >
             <Button
               variant="contained"
               startIcon={<TwitterIcon />}
               sx={{
-                width: "201px",
+                width: "160px",
                 height: "60px",
                 backgroundColor: "#1DA1F2",
+                fontSize: '16px',
                 "&:hover": {
                     backgroundColor: '#187cbb'
                 }
@@ -112,13 +119,17 @@ const Header = () => {
             >
               Twitter
             </Button>
+            </a>
+
+            <a href="https://www.linkedin.com/in/prabhat187" target="_blank" >
             <Button
               variant="contained"
               startIcon={<LinkedInIcon />}
               sx={{
-                width: "201px",
+                width: "160px",
                 height: "60px",
                 backgroundColor: "#0072b1 ",
+                fontSize: '16px',
                 "&:hover": {
                     backgroundColor: '#01669d'
                 }
@@ -127,6 +138,8 @@ const Header = () => {
               LinkedIn
               {/* 01669d */}
             </Button>
+            </a>
+
           </Box>
         </Box>
         <Box
