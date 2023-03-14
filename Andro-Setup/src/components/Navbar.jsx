@@ -1,8 +1,11 @@
 import { Box, Container, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+
+  const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState("");
 
   useEffect(() => {
@@ -38,6 +41,7 @@ const Navbar = () => {
         >
 
           <Typography
+            onClick={() => navigate('/')}
             sx={{
               fontSize: "25px",
               fontWeight: "600",
@@ -100,11 +104,19 @@ const Navbar = () => {
             
           }}
         >
-          {["Home", "Portfolio", "Contact"].map((item) => {
+          {["Home", "About", "Contact"].map((item) => {
             let currentItm = activeFilter === item;
             return (
               <Typography
-                onClick={() => setActiveFilter(item)}
+                onClick={() => {
+                  setActiveFilter(item);
+                  if(item === 'Home'){
+                    navigate('/')
+                  }
+                  else {
+                    navigate(`/${item}`)
+                  }
+                }}
                 sx={{
                   cursor: "pointer",
                   color: !currentItm ? "#424242" : "#5A47AB",
