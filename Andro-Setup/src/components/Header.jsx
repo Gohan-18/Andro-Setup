@@ -16,6 +16,7 @@ const Header = () => {
           alignItems: "start",
           justifyContent: "space-between",
           pt: "150px",
+          // px: '10px'
         }}
       >
         <Box
@@ -27,7 +28,7 @@ const Header = () => {
             justifyContent: "start",
             flexDirection: "column",
             pt: "50px",
-            pl: "20px",
+            // pl: "10px",
           }}
         >
           <Box>
@@ -158,6 +159,7 @@ const Header = () => {
               display: "flex",
               alignItems: "start",
               justifyContent: "end",
+              
             }}
           >
             <CardMedia
@@ -169,6 +171,7 @@ const Header = () => {
                 height: "80%",
                 maxHeight: "360px",
                 objectFit: "contain",
+                
               }}
             />
           </Box>
