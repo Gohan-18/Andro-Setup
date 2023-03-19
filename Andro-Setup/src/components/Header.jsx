@@ -114,7 +114,7 @@ const Header = () => {
                 backgroundColor: "#1DA1F2",
                 fontSize: '16px',
                 "&:hover": {
-                    backgroundColor: '#187cbb'
+                    backgroundColor: '#1d76f2'
                 }
               }}
             >
@@ -132,7 +132,7 @@ const Header = () => {
                 backgroundColor: "#0072b1 ",
                 fontSize: '16px',
                 "&:hover": {
-                    backgroundColor: '#01669d'
+                    backgroundColor: '#005bb1'
                 }
               }}
             >
