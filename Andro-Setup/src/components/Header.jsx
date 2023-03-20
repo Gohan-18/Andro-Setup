@@ -11,7 +11,7 @@ const Header = () => {
       <Box
         sx={{
           display: "flex",
-          height: "100vh",
+          height: "80vh",
           width: "100%",
           alignItems: "start",
           justifyContent: "space-between",

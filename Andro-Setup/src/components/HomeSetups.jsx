@@ -93,24 +93,23 @@ const HomeSetups = () => {
   return (
     <>
     <Box sx={{width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', }} >
-    <Grid container spacing={3}>
+    <Box sx={{width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap : 4, py: '50px' }} >
     {homeSetups?.map((item) => {
 
-      const { node } = item;
-
+      const { node: { setupImage, title, id } } = item;
+      // xs={12} sm={6} md={3}
     return (   
-    <Grid item key={node.id} xs={12} sm={6} md={3} >
+    <Box key={id} sx={{width: '40%'}}  >
     <Card 
         sx={{
             position: 'relative',
             borderRadius: '10px', 
             background: 'none', 
-            margine: '10px',
             transition: '0.5s',
             '&:hover': {
             transform: {
                 xs: 'scale(1.05,1.05)',
-                md:'scale(1.1,1.1)'
+                md:'scale(1.05,1.05)'
             },
             backgroundColor: '#333533',
             }
@@ -118,6 +117,7 @@ const HomeSetups = () => {
         <CardActionArea
             sx={{
             height:'100%', 
+            width: '100%',
             display:'flex', 
             flexDirection:'column', 
             position: 'relative',
@@ -125,15 +125,12 @@ const HomeSetups = () => {
             >
             <CardMedia                 
             component='img' 
-            image={node?.setupImage?.url} 
-            alt={node.title}
+            image={setupImage?.url} 
+            alt={title}
             sx={{
-                alignSelf:'center', 
                 width:'100%', 
                 height:'100%', 
                 objectFit:'contain',
-                borderTopLeftRadius: '10px',
-                borderTopRightRadius: '10px',
             }}
             />
             {/* <CardContent 
@@ -193,9 +190,9 @@ const HomeSetups = () => {
 
         </CardActionArea>
         </Card>
-        </Grid>
+        </Box>
         )})}
-      </Grid>
+      </Box>
     </Box>
     </>
   )

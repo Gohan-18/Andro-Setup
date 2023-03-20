@@ -17,6 +17,7 @@ const Navbar = () => {
       <Container
         maxWidth="lg"
         sx={{
+          zIndex: 50,
           position: "fixed",
           display: "flex",
           width: "100%",
