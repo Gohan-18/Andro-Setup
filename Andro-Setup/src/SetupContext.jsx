@@ -1,13 +1,13 @@
-import React, { createContext, useContext } from 'react'
+import React, { createContext, useContext, useState } from 'react'
 
-const Store = createContext()
+const Store = createContext(null)
 
 const SetupContext = ({children}) => {
 
-    
+    const [homeSetups, setHomeSetups] = useState();
 
   return (
-    <Store.Provider value={{}} >
+    <Store.Provider value={{homeSetups, setHomeSetups}} >
         {children}
     </Store.Provider>
   )
