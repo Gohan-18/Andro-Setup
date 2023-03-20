@@ -96,7 +96,7 @@ const Header = () => {
                 backgroundColor: "#E1306C",
                 fontSize: '16px',
                 "&:hover": {
-                    backgroundColor: '#c3295c'
+                    backgroundColor: '#d22b3e'
                 }
               }}
             >

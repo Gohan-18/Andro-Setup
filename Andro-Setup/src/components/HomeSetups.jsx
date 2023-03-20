@@ -8,6 +8,8 @@ import { SetupState } from '../SetupContext';
 
 const graphqlAPI = import.meta.env.VITE_GRAPHCMS_ENDPOINT;
 
+// https://play.google.com/store/search?q=minimalkwgt&c=apps
+
 const HomeSetups = () => {
 
   const { homeSetups, setHomeSetups } = SetupState();
