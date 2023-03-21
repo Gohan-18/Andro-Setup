@@ -95,23 +95,27 @@ const HomeSetups = () => {
   return (
     <>
     <Box sx={{width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', }} >
-    <Box sx={{width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap : 4, py: '50px' }} >
+    {/* <Box sx={{width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap : 4, py: '50px' }} > */}
+    <Grid container spacing={5} sx={{py: '50px'}} >
     {homeSetups?.map((item) => {
 
       const { node: { setupImage, title, id } } = item;
       // xs={12} sm={6} md={3}
     return (   
-    <Box key={id} sx={{width: '40%'}}  >
+    // <Box key={id} sx={{width: '40%'}}  >
+    <Grid item key={id} xs={12} sm={6} >
     <Card 
         sx={{
+            height: '100%',
+            width: '100%',
             position: 'relative',
             borderRadius: '10px', 
             background: 'none', 
             transition: '0.5s',
             '&:hover': {
             transform: {
-                xs: 'scale(1.05,1.05)',
-                md:'scale(1.05,1.05)'
+                xs: 'scale(1.03,1.03)',
+                md:'scale(1.03,1.03)'
             },
             backgroundColor: '#333533',
             }
@@ -130,9 +134,10 @@ const HomeSetups = () => {
             image={setupImage?.url} 
             alt={title}
             sx={{
+                // maxHeight: '300px',
                 width:'100%', 
                 height:'100%', 
-                objectFit:'contain',
+                objectFit:'cover',
             }}
             />
             {/* <CardContent 
@@ -192,9 +197,12 @@ const HomeSetups = () => {
 
         </CardActionArea>
         </Card>
-        </Box>
+        {/* </Box> */}
+        </Grid>
+
         )})}
-      </Box>
+      {/* </Box> */}
+      </Grid>
     </Box>
     </>
   )
