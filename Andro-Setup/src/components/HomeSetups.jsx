@@ -1,8 +1,16 @@
-import { Box, Card, CardActionArea, CardMedia, Grid, Typography } from '@mui/material'
-import React, { useEffect, useState } from 'react'
+import {
+  Box,
+  Button,
+  Card,
+  CardActionArea,
+  CardMedia,
+  Grid,
+  Typography,
+} from "@mui/material";
+import React, { useEffect, useState } from "react";
 // import { getAllSetups } from '../../services/graphQl'
 import { request, gql } from "graphql-request";
-import { SetupState } from '../SetupContext';
+import { SetupState } from "../SetupContext";
 // import { request, gql } from "graphql-request";
 // import { SetupState } from "../src/SetupContext";
 
@@ -11,52 +19,49 @@ const graphqlAPI = import.meta.env.VITE_GRAPHCMS_ENDPOINT;
 // https://play.google.com/store/search?q=minimalkwgt&c=apps
 
 const HomeSetups = () => {
-
   const { homeSetups, setHomeSetups } = SetupState();
   // const [ limitedSetups, setLimitedSetups ] = useState([]);
 
   const getAllSetups = async () => {
-
-  const query = gql`
-    query MyQuery {
-      setups_Connection {
-        edges {
-          node {
-            iconPack
-            id
-            launcher
-            setup_id
-            title
-            uploadedDate
-            wallpaper
-            widgets
-            setupImage {
-              url
+    const query = gql`
+      query MyQuery {
+        setups_Connection {
+          edges {
+            node {
+              iconPack
+              id
+              launcher
+              setup_id
+              title
+              uploadedDate
+              wallpaper
+              widgets
+              setupImage {
+                url
+              }
             }
           }
         }
       }
-    }
-  `;
+    `;
 
-  await request(graphqlAPI, query)
-  .then((result) => {
-      const data = result.setups_Connection.edges;
-      // console.log(data)
-      setHomeSetups(data);
-  })
-  .catch((error) => {
-      console.log(error)
-  })
+    await request(graphqlAPI, query)
+      .then((result) => {
+        const data = result.setups_Connection.edges;
+        // console.log(data)
+        setHomeSetups(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
-  // console.log(data)
-  // return data;
-};
+    // console.log(data)
+    // return data;
+  };
 
   useEffect(() => {
     getAllSetups();
-  }, [])
-  
+  }, []);
 
   // useEffect(() => {
   //   const fetchSetups = async () => {
@@ -87,116 +92,80 @@ const HomeSetups = () => {
   //   fetchSetups();
   // }, []);
 
-  // const setups = getAllSetups()
-
-  // setHomeSetups(setups)
-  // let count = 0;
-  // const limitedSetup = [];
-
-  // let temp = [];
-
-  // if(homeSetups) {
-    // let limitedSetup = homeSetups ? homeSetups.filter((item, index) => {
-    //   // console.log(item)
-    //   temp.push(item)
-    //   if(index === 3) return temp;
-    // }) : [];
-
-    // console.log(limitedSetup)
-
-    // for(let setup of homeSetups) {
-    //   limitedSetup.push(setup);
-    //   // console.log(limitedSetups)
-    // }
-
-    // if(limitedSetup.length === 3) {
-    //   setLimitedSetups(limitedSetup)
-    //   return;
-    // };
-  // }
-
-  // console.log(limitedSetups)
-  
-
-  // function filterSixSetups(item) {
-
-  //   const insideArr = [];
-
-  //   insideArr.push(item)
-
-  //   if(item.length === 3) {
-  //     return insideArr;
-  //   }
-    
-  // }
-
   const limitedSetup = [];
 
-  // homeSetups?.forEach((element, index) => {
+  // homeSetups?.forEach((element, index ) => {
   //   limitedSetup.push(element);
-
-  //   if(index === 3) return;
   // });
 
-  if(homeSetups){
-    for(let i = 0; i < 3; i++) {
-      limitedSetup.push(homeSetups[i])
+  if (homeSetups) {
+    for (let i = 0; i < 6; i++) {
+      limitedSetup.push(homeSetups[i]);
     }
   }
 
-  console.log(limitedSetup)
-
-  
+  console.log(limitedSetup);
 
   return (
     <>
-    <Box sx={{width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', }} >
-    {/* <Box sx={{width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap : 4, py: '50px' }} > */}
-    <Grid container spacing={5} sx={{py: '50px'}} >
-    {limitedSetup?.map((item) => {
-
-      const { node: { setupImage, title, id } } = item;
-      // xs={12} sm={6} md={3}
-    return (   
-    // <Box key={id} sx={{width: '40%'}}  >
-    <Grid item key={id} xs={12} sm={6} >
-    <Card 
+      <Box
         sx={{
-            height: '100%',
-            width: '100%',
-            position: 'relative',
-            borderRadius: '10px', 
-            background: 'none', 
-            transition: '0.5s',
-            '&:hover': {
-            transform: {
-                xs: 'scale(1.03,1.03)',
-                md:'scale(1.03,1.03)'
-            },
-            backgroundColor: '#333533',
-            }
-            }} >
-        <CardActionArea
-            sx={{
-            height:'100%', 
-            width: '100%',
-            display:'flex', 
-            flexDirection:'column', 
-            position: 'relative',
-            }}
-            >
-            <CardMedia                 
-            component='img' 
-            image={setupImage?.url} 
-            alt={title}
-            sx={{
-                // maxHeight: '300px',
-                width:'100%', 
-                height:'100%', 
-                objectFit:'cover',
-            }}
-            />
-            {/* <CardContent 
+          width: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: 'column',
+          py: '50px'
+        }}
+      >
+        {/* <Box sx={{width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap : 4, py: '50px' }} > */}
+        <Grid container spacing={5} sx={{ py: "50px" }}>
+          {limitedSetup?.map((item) => {
+            const {
+              node: { setupImage, title, id },
+            } = item;
+            // xs={12} sm={6} md={3}
+            return (
+              // <Box key={id} sx={{width: '40%'}}  >
+              <Grid item key={id} xs={12} sm={6}>
+                <Card
+                  sx={{
+                    height: "100%",
+                    width: "100%",
+                    position: "relative",
+                    borderRadius: "10px",
+                    background: "none",
+                    transition: "0.5s",
+                    "&:hover": {
+                      transform: {
+                        xs: "scale(1.03,1.03)",
+                        md: "scale(1.03,1.03)",
+                      },
+                      backgroundColor: "#333533",
+                    },
+                  }}
+                >
+                  <CardActionArea
+                    sx={{
+                      height: "100%",
+                      width: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      position: "relative",
+                    }}
+                  >
+                    <CardMedia
+                      component="img"
+                      image={setupImage?.url}
+                      alt={title}
+                      sx={{
+                        // maxHeight: '300px',
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
+                    {/* <CardContent 
             sx={{
                 display: 'flex', 
                 flexDirection: 'column', 
@@ -250,18 +219,18 @@ const HomeSetups = () => {
                 Published at: {snippet.publishedAt.slice(0,10)}
             </Typography>
             </CardContent> */}
-
-        </CardActionArea>
-        </Card>
-        {/* </Box> */}
+                  </CardActionArea>
+                </Card>
+              </Grid>
+            );
+          })}
         </Grid>
 
-        )})}
-      {/* </Box> */}
-      </Grid>
-    </Box>
-    </>
-  )
-}
+        <Button variant="outlined" fullWidth sx={{py: '20px'}} >Show All</Button>
 
-export default HomeSetups
+      </Box>
+    </>
+  );
+};
+
+export default HomeSetups;
