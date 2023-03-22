@@ -13,6 +13,7 @@ const graphqlAPI = import.meta.env.VITE_GRAPHCMS_ENDPOINT;
 const HomeSetups = () => {
 
   const { homeSetups, setHomeSetups } = SetupState();
+  // const [ limitedSetups, setLimitedSetups ] = useState([]);
 
   const getAllSetups = async () => {
 
@@ -41,7 +42,7 @@ const HomeSetups = () => {
   await request(graphqlAPI, query)
   .then((result) => {
       const data = result.setups_Connection.edges;
-      console.log(data)
+      // console.log(data)
       setHomeSetups(data);
   })
   .catch((error) => {
@@ -89,15 +90,70 @@ const HomeSetups = () => {
   // const setups = getAllSetups()
 
   // setHomeSetups(setups)
+  // let count = 0;
+  // const limitedSetup = [];
 
-  console.log(homeSetups)
+  // let temp = [];
+
+  // if(homeSetups) {
+    // let limitedSetup = homeSetups ? homeSetups.filter((item, index) => {
+    //   // console.log(item)
+    //   temp.push(item)
+    //   if(index === 3) return temp;
+    // }) : [];
+
+    // console.log(limitedSetup)
+
+    // for(let setup of homeSetups) {
+    //   limitedSetup.push(setup);
+    //   // console.log(limitedSetups)
+    // }
+
+    // if(limitedSetup.length === 3) {
+    //   setLimitedSetups(limitedSetup)
+    //   return;
+    // };
+  // }
+
+  // console.log(limitedSetups)
+  
+
+  // function filterSixSetups(item) {
+
+  //   const insideArr = [];
+
+  //   insideArr.push(item)
+
+  //   if(item.length === 3) {
+  //     return insideArr;
+  //   }
+    
+  // }
+
+  const limitedSetup = [];
+
+  // homeSetups?.forEach((element, index) => {
+  //   limitedSetup.push(element);
+
+  //   if(index === 3) return;
+  // });
+
+  if(homeSetups){
+    for(let i = 0; i < 3; i++) {
+      limitedSetup.push(homeSetups[i])
+    }
+  }
+
+  console.log(limitedSetup)
+
+  
 
   return (
     <>
     <Box sx={{width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', }} >
     {/* <Box sx={{width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap : 4, py: '50px' }} > */}
     <Grid container spacing={5} sx={{py: '50px'}} >
-    {homeSetups?.map((item) => {
+    {limitedSetup?.map((item) => {
 
       const { node: { setupImage, title, id } } = item;
       // xs={12} sm={6} md={3}
