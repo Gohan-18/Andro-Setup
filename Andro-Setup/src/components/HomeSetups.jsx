@@ -19,8 +19,10 @@ const graphqlAPI = import.meta.env.VITE_GRAPHCMS_ENDPOINT;
 // https://play.google.com/store/search?q=minimalkwgt&c=apps
 
 const HomeSetups = () => {
+  const limitedSetup = [];
   const { homeSetups, setHomeSetups } = SetupState();
   // const [ limitedSetups, setLimitedSetups ] = useState([]);
+  const [toggleShowAll, setToggleShowAll] = useState(false);
 
   const getAllSetups = async () => {
     const query = gql`
@@ -92,14 +94,13 @@ const HomeSetups = () => {
   //   fetchSetups();
   // }, []);
 
-  const limitedSetup = [];
 
   // homeSetups?.forEach((element, index ) => {
   //   limitedSetup.push(element);
   // });
 
   if (homeSetups) {
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 4; i++) {
       limitedSetup.push(homeSetups[i]);
     }
   }
@@ -118,15 +119,13 @@ const HomeSetups = () => {
           py: '50px'
         }}
       >
-        {/* <Box sx={{width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap : 4, py: '50px' }} > */}
         <Grid container spacing={5} sx={{ py: "50px" }}>
-          {limitedSetup?.map((item) => {
+          {!toggleShowAll ? 
+            limitedSetup?.map((item) => {
             const {
               node: { setupImage, title, id },
             } = item;
-            // xs={12} sm={6} md={3}
             return (
-              // <Box key={id} sx={{width: '40%'}}  >
               <Grid item key={id} xs={12} sm={6}>
                 <Card
                   sx={{
@@ -165,7 +164,73 @@ const HomeSetups = () => {
                         objectFit: "cover",
                       }}
                     />
-                    {/* <CardContent 
+                  </CardActionArea>
+                </Card>
+              </Grid>
+            );
+          }) :
+
+          homeSetups?.map((item) => {
+            const {
+              node: { setupImage, title, id },
+            } = item;
+            return (
+              <Grid item key={id} xs={12} sm={6}>
+                <Card
+                  sx={{
+                    height: "100%",
+                    width: "100%",
+                    position: "relative",
+                    borderRadius: "10px",
+                    background: "none",
+                    transition: "0.5s",
+                    "&:hover": {
+                      transform: {
+                        xs: "scale(1.03,1.03)",
+                        md: "scale(1.03,1.03)",
+                      },
+                      backgroundColor: "#333533",
+                    },
+                  }}
+                >
+                  <CardActionArea
+                    sx={{
+                      height: "100%",
+                      width: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      position: "relative",
+                    }}
+                  >
+                    <CardMedia
+                      component="img"
+                      image={setupImage?.url}
+                      alt={title}
+                      sx={{
+                        // maxHeight: '300px',
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </CardActionArea>
+                </Card>
+              </Grid>
+            );
+          })}
+        </Grid>
+
+        <Button onClick={() => setToggleShowAll(true)} variant="outlined" fullWidth sx={{py: '20px', display: toggleShowAll ? 'none' : 'flex'}} >Show All</Button>
+
+      </Box>
+    </>
+  );
+};
+
+export default HomeSetups;
+
+
+{/* <CardContent 
             sx={{
                 display: 'flex', 
                 flexDirection: 'column', 
@@ -219,18 +284,3 @@ const HomeSetups = () => {
                 Published at: {snippet.publishedAt.slice(0,10)}
             </Typography>
             </CardContent> */}
-                  </CardActionArea>
-                </Card>
-              </Grid>
-            );
-          })}
-        </Grid>
-
-        <Button variant="outlined" fullWidth sx={{py: '20px'}} >Show All</Button>
-
-      </Box>
-    </>
-  );
-};
-
-export default HomeSetups;
