@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../components/Header'
-import HomeSetups from '../components/HomeSetups'
+import HomeSetups from '../components/HomeSetupCards'
 
 const Home = () => {
   return (

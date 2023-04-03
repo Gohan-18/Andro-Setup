@@ -4,10 +4,11 @@ const Store = createContext(null)
 
 const SetupContext = ({children}) => {
 
-    const [homeSetups, setHomeSetups] = useState();
+    const [homeSetups, setHomeSetups] = useState([]);
+    const [toggleShowAll, setToggleShowAll] = useState(false);
 
   return (
-    <Store.Provider value={{homeSetups, setHomeSetups}} >
+    <Store.Provider value={{homeSetups, setHomeSetups, toggleShowAll, setToggleShowAll}} >
         {children}
     </Store.Provider>
   )
