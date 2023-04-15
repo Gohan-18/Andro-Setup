@@ -1,11 +1,16 @@
+import { Box, Typography } from '@mui/material'
 import React from 'react'
+import { SetupState } from '../SetupContext';
 
 const SingleSetup = () => {
 
-    
+  const { singleSetup, setSingleSetup } = SetupState();
+  console.log(singleSetup)
 
   return (
-    <div>SingleSetup</div>
+    <Box sx={{mt: '100px'}} >
+      <Typography>Single setup</Typography>
+    </Box>
   )
 }
 
