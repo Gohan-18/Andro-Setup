@@ -23,9 +23,18 @@ const SingleSetup = () => {
       sx={{
         mt: "100px",
         display: "flex",
-        alignItems: "start",
-        justifyContent: "space-between",
-        // flexDirection: "column",
+        alignItems: {
+          xs: 'center',
+          lg: "start"
+        },
+        justifyContent: {
+          xs: 'start',
+          lg: "space-between"
+        },
+        flexDirection: {
+          xs: 'column',
+          lg: 'row'
+        },
         width: '100%',
         pt: '30px'
       }}
@@ -38,11 +47,11 @@ const SingleSetup = () => {
         alt={title}
         sx={{
           // maxHeight: '300px',
-          width: "500px",
+          width: "100%",
           height: "500px",
           // width: "100%",
           // height: "100%",
-          objectFit: "cover",
+          objectFit: "contain",
           backgroundColor: "#f8f9fa",
           borderRadius: '20px'
         }}

@@ -199,12 +199,15 @@ const HomeSetups = () => {
                 })
               : homeSetups?.map((item) => {
                   const {
-                    node: { setupImage, title, id, setup_id },
+                    node: { setupImage, title, id, setup_id, iconPack, launcher, uploadedDate, wallpaper, widgets },
                   } = item;
                   return (
                     <Grid item key={id} xs={12} sm={6}>
                       <Card
-                        onClick={() => navigate(`/Setup/${setup_id}`)}
+                        onClick={() => {
+                          setSingleSetup({setupImage, title, id, setup_id, iconPack, launcher, uploadedDate, wallpaper, widgets})
+                          navigate(`/Setup/${setup_id}`)
+                        }}
                         sx={{
                           height: "100%",
                           width: "100%",
