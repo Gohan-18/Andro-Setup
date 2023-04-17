@@ -36,11 +36,20 @@ const SingleSetup = () => {
           lg: 'row'
         },
         width: '100%',
-        pt: '30px'
+        pt: '30px',
+        
       }}
     >
       {/* <Typography>Single setup</Typography> */}
-      <Box sx={{width: '50%'}} >
+      <Box 
+        sx={{
+          width: {
+            xs: '100%',
+            lg: '50%'
+          },
+          my: '20px',
+          // border: '2px solid red'
+        }} >
       <CardMedia
         component="img"
         image={setupImage?.url}
@@ -48,7 +57,10 @@ const SingleSetup = () => {
         sx={{
           // maxHeight: '300px',
           width: "100%",
-          height: "500px",
+          height: {
+            xs: '300px',
+            md: '500px'
+          },
           // width: "100%",
           // height: "100%",
           objectFit: "contain",
@@ -56,10 +68,11 @@ const SingleSetup = () => {
           borderRadius: '20px'
         }}
       />
+      {/* <img src={setupImage?.url} alt={title} /> */}
       </Box>
 
       <Box 
-        sx={{display: 'flex', alignItems: 'start', justifyContent: 'start', flexDirection: 'column', width: '50%' }} >
+        sx={{display: 'flex', alignItems: 'start', justifyContent: 'start', flexDirection: 'column', width: {xs: '100%', lg: '50%'} }} >
         <Typography>{title} </Typography>
       </Box>
 

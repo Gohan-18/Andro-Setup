@@ -27,8 +27,13 @@ const Navbar = () => {
           backgroundColor: "#fff",
           top: '0',
           left: '0',
-          right: '0'
-          // border: '2px solid black'
+          right: '0',
+          flexDirection: {
+            xs: 'column',
+            sm: 'row'
+          },
+          // border: '2px solid red',
+          py: '10px'
         }}
       >
         <Box
@@ -38,6 +43,10 @@ const Navbar = () => {
             justifyContent: "center",
             height: "100%",
             gap: 2,
+            // flexDirection: {
+            //   xs: 'column',
+            //   sm: 'row'
+            // }
           }}
         >
 
@@ -58,7 +67,10 @@ const Navbar = () => {
               backgroundColor: "#5A47AB",
               color: "#FFFFFF",
               py: "5px",
-              display: "flex",
+              display: {
+                xs: 'none',
+                sm: 'flex'
+              },
               alignItems: "center",
               justifyContent: "center",
               height: "auto",
@@ -79,6 +91,10 @@ const Navbar = () => {
                 left: -8,
                 transform: "rotate(45deg)",
                 zIndex: -1,
+                // display: {
+                //   xs: 'none',
+                //   sm: 'flex'
+                // }
               }}
             />
             <LinkedInIcon sx={{ height: "15px", width: "15px" }} />
