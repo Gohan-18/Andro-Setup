@@ -24,56 +24,143 @@ const SingleSetup = () => {
         mt: "100px",
         display: "flex",
         alignItems: {
-          xs: 'center',
-          lg: "start"
+          xs: "center",
+          md: "start",
         },
         justifyContent: {
-          xs: 'start',
-          lg: "space-between"
+          xs: "start",
+          md: "space-between",
         },
         flexDirection: {
-          xs: 'column',
-          lg: 'row'
+          xs: "column",
+          md: "row",
         },
-        width: '100%',
-        pt: '30px',
-        
+        width: "100%",
+        // pt: '30px',
       }}
     >
-      <Box 
+      <Box
         sx={{
           width: {
-            xs: '100%',
-            lg: '50%'
+            xs: "100%",
+            lg: "50%",
           },
-          my: '20px',
+          my: "20px",
+          display: "flex",
+          alignItems: "start",
+          justifyContent: "center",
           // border: '2px solid red'
-        }} >
-      <CardMedia
-        component="img"
-        image={setupImage?.url}
-        alt={title}
-        sx={{
-          // maxHeight: '300px',
-          width: "100%",
-          height: {
-            xs: '300px',
-            md: '500px'
-          },
-          // width: "100%",
-          // height: "100%",
-          objectFit: "contain",
-          backgroundColor: "#f8f9fa",
-          borderRadius: '20px'
+          // padding: '20px'
+          px: "30px",
+          py: "10px",
         }}
-      />
+      >
+        <CardMedia
+          component="img"
+          image={setupImage?.url}
+          alt={title}
+          sx={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            backgroundColor: "#f8f9fa",
+            borderRadius: {
+              xs: "10px",
+              md: "20px",
+            },
+            margin: "20px",
+          }}
+        />
       </Box>
 
-      <Box 
-        sx={{display: 'flex', alignItems: 'start', justifyContent: 'start', flexDirection: 'column', width: {xs: '100%', lg: '50%'} }} >
-        <Typography>{title} </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "start",
+          justifyContent: "start",
+          flexDirection: "column",
+          width: { xs: "100%", lg: "50%" },
+          my: "50px",
+          px: { xs: "10px", md: "30px" },
+        }}
+      >
+        <Typography
+          sx={{
+            fontSize: {
+              xs: "25px",
+              md: "30px",
+            },
+            fontWeight: 600,
+            color: "#1d3557",
+            pb: "10px",
+          }}
+        >
+          {title}{" "}
+        </Typography>
+        <Typography
+          sx={{
+            fontSize: {
+              xs: "15px",
+              md: "20px",
+            },
+            fontWeight: 500,
+            color: "#457b9d",
+          }}
+        >
+          Launcher : {launcher}{" "}
+        </Typography>
+        <Typography
+          sx={{
+            fontSize: {
+              xs: "15px",
+              md: "20px",
+            },
+            fontWeight: 500,
+            color: "#457b9d",
+          }}
+        >
+          Icon Pack : {iconPack}{" "}
+        </Typography>
+        <Typography
+          sx={{
+            fontSize: {
+              xs: "15px",
+              md: "20px",
+            },
+            fontWeight: 500,
+            color: "#457b9d",
+          }}
+        >
+          Date : {uploadedDate}{" "}
+        </Typography>
+        <Typography
+          sx={{
+            fontSize: {
+              xs: "15px",
+              md: "20px",
+            },
+            fontWeight: 500,
+            color: "#457b9d",
+          }}
+        >
+          wallpaper : {wallpaper}{" "}
+        </Typography>
+        {widgets.map((item) => (
+          <Typography
+            key={item}
+            sx={{
+              fontSize: {
+                xs: "15px",
+                md: "20px",
+              },
+              fontWeight: 500,
+              color: "#457b9d",
+            }}
+          >
+            {item}
+          </Typography>
+        ))}
       </Box>
-
     </Box>
   );
 };

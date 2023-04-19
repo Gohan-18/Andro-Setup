@@ -107,7 +107,7 @@ const HomeSetups = () => {
   // });
 
   if (homeSetups) {
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 6; i++) {
       limitedSetup.push(homeSetups[i]);
     }
   }
@@ -147,7 +147,7 @@ const HomeSetups = () => {
                     node: { setupImage, title, id, setup_id, iconPack, launcher, uploadedDate, wallpaper, widgets},
                   } = item;
                   return (
-                    <Grid item key={id} xs={12} sm={6}>
+                    <Grid item key={id} xs={12} sm={4}>
                       <Card
                         onClick={() => {
                           setSingleSetup({setupImage, title, id, setup_id, iconPack, launcher, uploadedDate, wallpaper, widgets})
@@ -202,7 +202,7 @@ const HomeSetups = () => {
                     node: { setupImage, title, id, setup_id, iconPack, launcher, uploadedDate, wallpaper, widgets },
                   } = item;
                   return (
-                    <Grid item key={id} xs={12} sm={6}>
+                    <Grid item key={id} xs={12} sm={4}>
                       <Card
                         onClick={() => {
                           setSingleSetup({setupImage, title, id, setup_id, iconPack, launcher, uploadedDate, wallpaper, widgets})
