@@ -40,7 +40,6 @@ const SingleSetup = () => {
         
       }}
     >
-      {/* <Typography>Single setup</Typography> */}
       <Box 
         sx={{
           width: {
@@ -68,7 +67,6 @@ const SingleSetup = () => {
           borderRadius: '20px'
         }}
       />
-      {/* <img src={setupImage?.url} alt={title} /> */}
       </Box>
 
       <Box 

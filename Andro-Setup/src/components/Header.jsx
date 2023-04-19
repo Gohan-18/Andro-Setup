@@ -16,7 +16,6 @@ const Header = () => {
           alignItems: "start",
           justifyContent: "space-between",
           pt: "150px",
-          // px: '10px'
         }}
       >
         <Box
@@ -28,7 +27,6 @@ const Header = () => {
             justifyContent: "start",
             flexDirection: "column",
             pt: "50px",
-            // pl: "10px",
           }}
         >
           <Box>
