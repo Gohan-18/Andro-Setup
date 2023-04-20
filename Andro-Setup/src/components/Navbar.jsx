@@ -32,7 +32,6 @@ const Navbar = () => {
             xs: 'column',
             sm: 'row'
           },
-          // border: '2px solid red',
           py: '10px'
         }}
       >
@@ -43,10 +42,6 @@ const Navbar = () => {
             justifyContent: "center",
             height: "100%",
             gap: 2,
-            // flexDirection: {
-            //   xs: 'column',
-            //   sm: 'row'
-            // }
           }}
         >
 
@@ -91,10 +86,6 @@ const Navbar = () => {
                 left: -8,
                 transform: "rotate(45deg)",
                 zIndex: -1,
-                // display: {
-                //   xs: 'none',
-                //   sm: 'flex'
-                // }
               }}
             />
             <LinkedInIcon sx={{ height: "15px", width: "15px" }} />
