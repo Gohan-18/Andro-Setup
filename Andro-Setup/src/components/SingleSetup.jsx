@@ -42,8 +42,6 @@ const SingleSetup = () => {
           md: "row",
         },
         width: "100%",
-        // pt: '30px',
-        // height: '100vh'
       }}
     >
       <Box
@@ -56,8 +54,6 @@ const SingleSetup = () => {
           display: "flex",
           alignItems: "start",
           justifyContent: "center",
-          // border: '2px solid red'
-          // padding: '20px'
           px: "30px",
           py: "10px",
         }}
@@ -91,7 +87,6 @@ const SingleSetup = () => {
           px: { xs: "10px", md: "30px" },
         }}
       >
-        {/*  1d3557 */}
         <Typography
           sx={{
             fontSize: {
