@@ -183,9 +183,6 @@ const HomeSetups = () => {
                             image={setupImage?.url}
                             alt={title}
                             sx={{
-                              // maxHeight: '300px',
-                              // width: "400px",
-                              // height: "400px",
                               width: "100%",
                               height: "100%",
                               objectFit: "cover",
@@ -238,7 +235,6 @@ const HomeSetups = () => {
                             image={setupImage?.url}
                             alt={title}
                             sx={{
-                              // maxHeight: '300px',
                               width: "100%",
                               height: "100%",
                               objectFit: "cover",
