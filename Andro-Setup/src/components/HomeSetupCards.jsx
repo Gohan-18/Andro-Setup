@@ -22,8 +22,15 @@ const graphqlAPI = import.meta.env.VITE_GRAPHCMS_ENDPOINT;
 
 const HomeSetups = () => {
   const limitedSetup = [];
-  const { homeSetups, setHomeSetups, toggleShowAll, setToggleShowAll, singleSetup, setSingleSetup } = SetupState();
-  console.log(singleSetup)
+  const {
+    homeSetups,
+    setHomeSetups,
+    toggleShowAll,
+    setToggleShowAll,
+    singleSetup,
+    setSingleSetup,
+  } = SetupState();
+  console.log(singleSetup);
   // const [ limitedSetups, setLimitedSetups ] = useState([]);
   // const [toggleShowAll, setToggleShowAll] = useState(false);
   const navigate = useNavigate();
@@ -144,14 +151,34 @@ const HomeSetups = () => {
             {!toggleShowAll
               ? limitedSetup?.map((item) => {
                   const {
-                    node: { setupImage, title, id, setup_id, iconPack, launcher, uploadedDate, wallpaper, widgets},
+                    node: {
+                      setupImage,
+                      title,
+                      id,
+                      setup_id,
+                      iconPack,
+                      launcher,
+                      uploadedDate,
+                      wallpaper,
+                      widgets,
+                    },
                   } = item;
                   return (
                     <Grid item key={id} xs={12} sm={4}>
                       <Card
                         onClick={() => {
-                          setSingleSetup({setupImage, title, id, setup_id, iconPack, launcher, uploadedDate, wallpaper, widgets})
-                          navigate(`/Setup/${setup_id}`)
+                          setSingleSetup({
+                            setupImage,
+                            title,
+                            id,
+                            setup_id,
+                            iconPack,
+                            launcher,
+                            uploadedDate,
+                            wallpaper,
+                            widgets,
+                          });
+                          navigate(`/Setup/${setup_id}`);
                         }}
                         sx={{
                           height: "100%",
@@ -196,14 +223,34 @@ const HomeSetups = () => {
                 })
               : homeSetups?.map((item) => {
                   const {
-                    node: { setupImage, title, id, setup_id, iconPack, launcher, uploadedDate, wallpaper, widgets },
+                    node: {
+                      setupImage,
+                      title,
+                      id,
+                      setup_id,
+                      iconPack,
+                      launcher,
+                      uploadedDate,
+                      wallpaper,
+                      widgets,
+                    },
                   } = item;
                   return (
                     <Grid item key={id} xs={12} sm={4}>
                       <Card
                         onClick={() => {
-                          setSingleSetup({setupImage, title, id, setup_id, iconPack, launcher, uploadedDate, wallpaper, widgets})
-                          navigate(`/Setup/${setup_id}`)
+                          setSingleSetup({
+                            setupImage,
+                            title,
+                            id,
+                            setup_id,
+                            iconPack,
+                            launcher,
+                            uploadedDate,
+                            wallpaper,
+                            widgets,
+                          });
+                          navigate(`/Setup/${setup_id}`);
                         }}
                         sx={{
                           height: "100%",

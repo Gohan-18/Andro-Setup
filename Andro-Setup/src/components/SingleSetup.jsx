@@ -6,11 +6,10 @@ import { useNavigate, useParams } from "react-router-dom";
 const SingleSetup = () => {
   const { singleSetup, setSingleSetup, homeSetups } = SetupState();
   const params = useParams();
-  console.log(params)
+  console.log(params);
   const { setupid } = params;
   const navigate = useNavigate();
   console.log(singleSetup);
-  
 
   const {
     setupImage,
@@ -83,7 +82,7 @@ const SingleSetup = () => {
           justifyContent: "start",
           flexDirection: "column",
           width: { xs: "100%", lg: "50%" },
-          my: '50px',
+          my: "50px",
           px: { xs: "10px", md: "30px" },
         }}
       >
@@ -100,100 +99,28 @@ const SingleSetup = () => {
         >
           {title}{" "}
         </Typography>
-        <Box sx={{display: 'flex', width: '100%', justifyContent: 'start', alignItems: 'center', gap: 1}} >
-        <Typography
+        <Box
           sx={{
-            fontSize: {
-              xs: "15px",
-              md: "20px",
-            },
-            fontWeight: 600,
-            color: "#1d3557",
+            display: "flex",
+            width: "100%",
+            justifyContent: "start",
+            alignItems: "center",
+            gap: 1,
           }}
         >
-          Launcher :
-        </Typography>
-        <Typography
-          sx={{
-            fontSize: {
-              xs: "15px",
-              md: "20px",
-            },
-            fontWeight: 500,
-            color: "#457b9d",
-          }}
-        >
-          {" "}{launcher}
-        </Typography>
-        </Box>
-        <Box sx={{display: 'flex', width: '100%', justifyContent: 'start', alignItems: 'center', gap: 1}} >
-        <Typography
-          sx={{
-            fontSize: {
-              xs: "15px",
-              md: "20px",
-            },
-            fontWeight: 600,
-            color: "#1d3557",
-          }}
-        >
-          Icon Pack :
-        </Typography>
-        <Typography
-          sx={{
-            fontSize: {
-              xs: "15px",
-              md: "20px",
-            },
-            fontWeight: 500,
-            color: "#457b9d",
-          }}
-        >
-          {" "}{iconPack}
-        </Typography>
-        </Box>
-        <Box sx={{display: 'flex', width: '100%', justifyContent: 'start', alignItems: 'center', gap: 1}} >
-        <Typography
-          sx={{
-            fontSize: {
-              xs: "15px",
-              md: "20px",
-            },
-            fontWeight: 600,
-            color: "#1d3557",
-          }}
-        >
-          Date :
-        </Typography>
-        <Typography
-          sx={{
-            fontSize: {
-              xs: "15px",
-              md: "20px",
-            },
-            fontWeight: 500,
-            color: "#457b9d",
-          }}
-        >
-          {" "}{uploadedDate}
-        </Typography>
-        </Box>
-        <Box sx={{display: 'flex', width: '100%', justifyContent: 'start', alignItems: 'center', gap: 1, flexWrap: 'wrap'}} >
-        <Typography
-          sx={{
-            fontSize: {
-              xs: "15px",
-              md: "20px",
-            },
-            fontWeight: 600,
-            color: "#1d3557",
-          }}
-        >
-          Widget(s) :
-        </Typography>
-        {widgets?.map((item) => (
           <Typography
-            key={item}
+            sx={{
+              fontSize: {
+                xs: "15px",
+                md: "20px",
+              },
+              fontWeight: 600,
+              color: "#1d3557",
+            }}
+          >
+            Launcher :
+          </Typography>
+          <Typography
             sx={{
               fontSize: {
                 xs: "15px",
@@ -201,15 +128,135 @@ const SingleSetup = () => {
               },
               fontWeight: 500,
               color: "#457b9d",
-              textTransform: 'capitalize'
             }}
           >
-            {item}
+            {" "}
+            {launcher}
           </Typography>
-        ))}
         </Box>
-        <Box sx={{display: 'flex', width: '100%', justifyContent: 'start', alignItems: 'center', pt: '30px'}} >
-        <a href={wallpaper} download ><Button variant="contained" size="small" >Download Wallpaper</Button></a>
+        <Box
+          sx={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "start",
+            alignItems: "center",
+            gap: 1,
+          }}
+        >
+          <Typography
+            sx={{
+              fontSize: {
+                xs: "15px",
+                md: "20px",
+              },
+              fontWeight: 600,
+              color: "#1d3557",
+            }}
+          >
+            Icon Pack :
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: {
+                xs: "15px",
+                md: "20px",
+              },
+              fontWeight: 500,
+              color: "#457b9d",
+            }}
+          >
+            {" "}
+            {iconPack}
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "start",
+            alignItems: "center",
+            gap: 1,
+          }}
+        >
+          <Typography
+            sx={{
+              fontSize: {
+                xs: "15px",
+                md: "20px",
+              },
+              fontWeight: 600,
+              color: "#1d3557",
+            }}
+          >
+            Date :
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: {
+                xs: "15px",
+                md: "20px",
+              },
+              fontWeight: 500,
+              color: "#457b9d",
+            }}
+          >
+            {" "}
+            {uploadedDate}
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "start",
+            alignItems: "center",
+            gap: 1,
+            flexWrap: "wrap",
+          }}
+        >
+          <Typography
+            sx={{
+              fontSize: {
+                xs: "15px",
+                md: "20px",
+              },
+              fontWeight: 600,
+              color: "#1d3557",
+            }}
+          >
+            Widget(s) :
+          </Typography>
+          {widgets?.map((item) => (
+            <Typography
+              key={item}
+              sx={{
+                fontSize: {
+                  xs: "15px",
+                  md: "20px",
+                },
+                fontWeight: 500,
+                color: "#457b9d",
+                textTransform: "capitalize",
+              }}
+            >
+              {item}
+            </Typography>
+          ))}
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "start",
+            alignItems: "center",
+            pt: "30px",
+          }}
+        >
+          <a href={wallpaper} download>
+            <Button variant="contained" size="small">
+              Download Wallpaper
+            </Button>
+          </a>
         </Box>
       </Box>
     </Box>

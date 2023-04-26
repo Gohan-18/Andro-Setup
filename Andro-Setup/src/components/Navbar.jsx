@@ -4,7 +4,6 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-
   const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState("");
 
@@ -25,14 +24,14 @@ const Navbar = () => {
           alignItems: "center",
           height: "100px",
           backgroundColor: "#fff",
-          top: '0',
-          left: '0',
-          right: '0',
+          top: "0",
+          left: "0",
+          right: "0",
           flexDirection: {
-            xs: 'column',
-            sm: 'row'
+            xs: "column",
+            sm: "row",
           },
-          py: '10px'
+          py: "10px",
         }}
       >
         <Box
@@ -44,9 +43,8 @@ const Navbar = () => {
             gap: 2,
           }}
         >
-
           <Typography
-            onClick={() => navigate('/')}
+            onClick={() => navigate("/")}
             sx={{
               fontSize: "25px",
               fontWeight: "600",
@@ -63,8 +61,8 @@ const Navbar = () => {
               color: "#FFFFFF",
               py: "5px",
               display: {
-                xs: 'none',
-                sm: 'flex'
+                xs: "none",
+                sm: "flex",
               },
               alignItems: "center",
               justifyContent: "center",
@@ -109,7 +107,6 @@ const Navbar = () => {
             justifyContent: "center",
             alignItems: "center",
             gap: 3,
-            
           }}
         >
           {["Home", "About", "Contact"].map((item) => {
@@ -118,11 +115,10 @@ const Navbar = () => {
               <Typography
                 onClick={() => {
                   setActiveFilter(item);
-                  if(item === 'Home'){
-                    navigate('/')
-                  }
-                  else {
-                    navigate(`/${item}`)
+                  if (item === "Home") {
+                    navigate("/");
+                  } else {
+                    navigate(`/${item}`);
                   }
                 }}
                 sx={{
