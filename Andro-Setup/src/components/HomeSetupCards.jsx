@@ -6,7 +6,6 @@ import {
   CardMedia,
   CircularProgress,
   Grid,
-  Typography,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 // import { getAllSetups } from '../../services/graphQl'
@@ -67,9 +66,6 @@ const HomeSetups = () => {
       .catch((error) => {
         console.log(error);
       });
-
-    // console.log(data)
-    // return data;
   };
 
   // useEffect(() => {
