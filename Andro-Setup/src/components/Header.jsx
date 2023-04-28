@@ -114,12 +114,21 @@ const Header = () => {
               variant="contained"
               startIcon={<InstagramIcon />}
               sx={{
-                width: "160px",
-                height: "60px",
+                width: {
+                  xs: '128px',
+                  md: '160px'
+                },
+                height: {
+                  xs: '48px',
+                  md: '60px'
+                },
                 // px: '25px',
                 // py: '15px',
                 backgroundColor: "#E1306C",
-                fontSize: '16px',
+                fontSize: {
+                  xs: '12px',
+                  md: '16px'
+                },
                 "&:hover": {
                     backgroundColor: '#d22b3e'
                 }
@@ -134,10 +143,19 @@ const Header = () => {
               variant="contained"
               startIcon={<TwitterIcon />}
               sx={{
-                width: "160px",
-                height: "60px",
+                width: {
+                  xs: '128px',
+                  md: '160px'
+                },
+                height: {
+                  xs: '48px',
+                  md: '60px'
+                },
                 backgroundColor: "#1DA1F2",
-                fontSize: '16px',
+                fontSize: {
+                  xs: '12px',
+                  md: '16px'
+                },
                 "&:hover": {
                     backgroundColor: '#1d76f2'
                 }
@@ -152,10 +170,19 @@ const Header = () => {
               variant="contained"
               startIcon={<LinkedInIcon />}
               sx={{
-                width: "160px",
-                height: "60px",
+                width: {
+                  xs: '128px',
+                  md: '160px'
+                },
+                height: {
+                  xs: '48px',
+                  md: '60px'
+                },
                 backgroundColor: "#0072b1 ",
-                fontSize: '16px',
+                fontSize: {
+                  xs: '12px',
+                  md: '16px'
+                },
                 "&:hover": {
                     backgroundColor: '#005bb1'
                 }
