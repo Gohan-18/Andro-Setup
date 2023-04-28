@@ -11,18 +11,36 @@ const Header = () => {
       <Box
         sx={{
           display: "flex",
-          height: "80vh",
+          height: {
+            md: '80vh'
+          },
           width: "100%",
           alignItems: "start",
           justifyContent: "space-between",
-          pt: "150px",
+          pt: {
+            xs: '120px',
+            md: '150px'
+          },
+          flexDirection: {
+            xs: 'column',
+            md: 'row'
+          },
+          px: {
+            xs: '10px',
+            sm: '20px',
+            md: '0px'
+          }
         }}
       >
         <Box
           sx={{
             display: "flex",
             height: "100%",
-            width: "50%",
+            width: {
+              xs: '100%',
+              sm: '80%',
+              md: '50%'
+            },
             alignItems: "start",
             justifyContent: "start",
             flexDirection: "column",
@@ -35,7 +53,10 @@ const Header = () => {
               sx={{
                 color: "#D05270",
                 fontWeight: "700",
-                fontSize: "50px",
+                fontSize: {
+                  xs: '35px',
+                  md: '50px'
+                },
                 textTransform: "uppercase",
               }}
             >
@@ -46,7 +67,10 @@ const Header = () => {
               sx={{
                 color: "#424242",
                 fontWeight: "500",
-                fontSize: "30px",
+                fontSize: {
+                  xs: '24px',
+                  md: '30px'
+                },
                 fontWeight: "500",
                 pb: "20px",
               }}
@@ -58,7 +82,10 @@ const Header = () => {
               sx={{
                 color: "#5c5c5c",
                 fontWeight: "400",
-                fontSize: "18px",
+                fontSize: {
+                  xs: '16px',
+                  md: '18px'
+                },
                 fontWeight: "400",
                 lineHeight: "25px",
                 //   textTransform: 'capitalize'
@@ -76,7 +103,7 @@ const Header = () => {
               alignItems: "start",
               justifyContent: "start",
               width: "100%",
-              height: "100%",
+              // height: "100%",
               py: "30px",
               gap: 2,
               flexWrap: 'wrap'
@@ -141,11 +168,15 @@ const Header = () => {
 
           </Box>
         </Box>
+
         <Box
           sx={{
             height: "100%",
             width: "50%",
-            display: "flex",
+            display: {
+              xs: 'none',
+              md: 'flex'
+            },
             alignItems: "start",
             justifyContent: "end",
           }}
