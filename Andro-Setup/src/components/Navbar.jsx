@@ -1,11 +1,14 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, IconButton, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { useNavigate } from "react-router-dom";
+import SegmentRoundedIcon from '@mui/icons-material/SegmentRounded';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import { SetupState } from "../SetupContext";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const [activeFilter, setActiveFilter] = useState("");
+  const { activeFilter, setActiveFilter, navbarState, setNavbarState } = SetupState();
 
   useEffect(() => {
     setActiveFilter("Home");
@@ -27,10 +30,6 @@ const Navbar = () => {
           top: "0",
           left: "0",
           right: "0",
-          flexDirection: {
-            xs: "column",
-            sm: "row",
-          },
           py: "10px",
         }}
       >
@@ -38,9 +37,17 @@ const Navbar = () => {
           sx={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
+            justifyContent: {
+              xs: 'space-between',
+              sm: 'start'
+            },
             height: "100%",
             gap: 2,
+            px: {
+              xs: '10px',
+              sm: '0px'
+            },
+            width: '100%'
           }}
         >
           <Typography
@@ -54,6 +61,20 @@ const Navbar = () => {
           >
             Andro/Setup
           </Typography>
+
+          {/* <Box> */}
+          <IconButton 
+            onClick={() => setNavbarState(!navbarState)}
+            sx={{
+              display: {
+                xs: 'flex',
+                sm: 'none'
+              }
+            }} 
+          >
+            {navbarState ? <CloseRoundedIcon/> : <SegmentRoundedIcon/> } 
+          </IconButton>
+          {/* </Box> */}
 
           <Box
             sx={{
@@ -103,7 +124,10 @@ const Navbar = () => {
 
         <Box
           sx={{
-            display: "flex",
+            display: {
+              xs: 'none',
+              sm: 'flex'
+            },
             justifyContent: "center",
             alignItems: "center",
             gap: 3,

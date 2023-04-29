@@ -68,7 +68,7 @@ const Header = () => {
                 color: "#424242",
                 fontWeight: "500",
                 fontSize: {
-                  xs: '24px',
+                  xs: '20px',
                   md: '30px'
                 },
                 fontWeight: "500",
