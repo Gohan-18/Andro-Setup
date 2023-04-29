@@ -63,7 +63,8 @@ const SingleSetup = () => {
           alt={title}
           sx={{
             width: "100%",
-            height: "100%",
+            // height: "100%",
+            maxHeight: '500px',
             objectFit: "cover",
             backgroundColor: "#f8f9fa",
             borderRadius: {
