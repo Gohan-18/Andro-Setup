@@ -160,56 +160,6 @@ const Navbar = () => {
             );
           })}
         </Box>
-
-        {/* <Box
-          sx={{
-            display: {
-              xs: 'flex',
-              sm: 'none'
-            },
-            justifyContent: "center",
-            alignItems: "center",
-            gap: 3,
-            flexDirection: 'column',
-            height: navbarState ? '100vh' : '0px',
-            width: '100%',
-            position: 'fixed',
-            top: 100,
-            right: 0,
-            left: 0,
-            backgroundColor: '#fff',
-            transition: 'all 300ms',
-            border: '2px solid red'
-          }}
-        >
-          {["Home", "About", "Contact"].map((item) => {
-            let currentItm = activeFilter === item;
-            return (
-              <Typography
-                onClick={() => {
-                  setActiveFilter(item);
-                  if (item === "Home") {
-                    navigate("/");
-                  } else {
-                    navigate(`/${item}`);
-                  }
-                }}
-                sx={{
-                  cursor: "pointer",
-                  color: !currentItm ? "#424242" : "#5A47AB",
-                  fontSize: "14px",
-                  textTransform: "uppercase",
-                  fontWeight: "700",
-                  display: navbarState ? 'flex' : 'none'
-                }}
-                key={item}
-              >
-                {item}
-              </Typography>
-            );
-          })}
-        </Box> */}
-
       </Container>
       <Box
           sx={{
