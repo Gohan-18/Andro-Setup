@@ -10,7 +10,7 @@ const SingleSetup = () => {
   const { setupid } = params;
   const navigate = useNavigate();
   console.log(singleSetup);
-
+  
   const {
     setupImage,
     title,
@@ -22,6 +22,25 @@ const SingleSetup = () => {
     wallpaper,
     widgets,
   } = singleSetup;
+
+  useEffect(() => {
+    if(!title) navigate('/')
+
+    // {
+    //   for(let setup of homeSetups) {
+    //     console.log(setup?.node?.setup_id)
+    //     if(setup?.node?.setup_id === setupid) {
+    //       setSingleSetup(setup)
+    //     } 
+    //     else {
+    //       navigate('/')
+    //     }
+    //   }
+    // }
+
+  }, [])
+
+  // console.log(homeSetups)
 
   return (
     <Box
