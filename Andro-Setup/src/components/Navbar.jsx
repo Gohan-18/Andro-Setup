@@ -2,13 +2,14 @@ import { Box, Container, IconButton, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { useNavigate } from "react-router-dom";
-import SegmentRoundedIcon from '@mui/icons-material/SegmentRounded';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import SegmentRoundedIcon from "@mui/icons-material/SegmentRounded";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import { SetupState } from "../SetupContext";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const { activeFilter, setActiveFilter, navbarState, setNavbarState } = SetupState();
+  const { activeFilter, setActiveFilter, navbarState, setNavbarState } =
+    SetupState();
 
   useEffect(() => {
     setActiveFilter("Home");
@@ -31,7 +32,7 @@ const Navbar = () => {
           left: "0",
           right: "0",
           py: "10px",
-          borderBottom: '3px solid #D05270',
+          borderBottom: "3px solid #D05270",
         }}
       >
         <Box
@@ -39,22 +40,25 @@ const Navbar = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: {
-              xs: 'space-between',
-              sm: 'start'
+              xs: "space-between",
+              sm: "start",
             },
             height: "100%",
             gap: 2,
             px: {
-              xs: '10px',
-              sm: '0px'
+              xs: "10px",
+              sm: "0px",
             },
-            width: '100%'
+            width: "100%",
           }}
         >
           <Typography
             onClick={() => navigate("/")}
             sx={{
-              fontSize: "25px",
+              fontSize: {
+                xs: "22px",
+                md: "25px",
+              },
               fontWeight: "600",
               color: "#424242",
               cursor: "pointer",
@@ -64,16 +68,22 @@ const Navbar = () => {
           </Typography>
 
           {/* <Box> */}
-          <IconButton 
+          <IconButton
             onClick={() => setNavbarState(!navbarState)}
             sx={{
               display: {
-                xs: 'flex',
-                sm: 'none'
-              }
-            }} 
+                xs: "flex",
+                sm: "none",
+              },
+              // width: '20px',
+              // height: '20px'
+            }}
           >
-            {navbarState ? <CloseRoundedIcon/> : <SegmentRoundedIcon/> } 
+            {navbarState ? (
+              <CloseRoundedIcon sx={{ width: "28px", height: "28px" }} />
+            ) : (
+              <SegmentRoundedIcon sx={{ width: "28px", height: "28px" }} />
+            )}
           </IconButton>
           {/* </Box> */}
 
@@ -126,8 +136,8 @@ const Navbar = () => {
         <Box
           sx={{
             display: {
-              xs: 'none',
-              sm: 'flex'
+              xs: "none",
+              sm: "flex",
             },
             justifyContent: "center",
             alignItems: "center",
@@ -162,54 +172,54 @@ const Navbar = () => {
         </Box>
       </Container>
       <Box
-          sx={{
-            display: {
-              xs: 'flex',
-              sm: 'none'
-            },
-            justifyContent: "center",
-            alignItems: "center",
-            gap: navbarState ? 3 : 0,
-            flexDirection: 'column',
-            height: navbarState ? '100vh' : '0px',
-            width: '100%',
-            position: 'fixed',
-            top: 0,
-            right: 0,
-            left: 0,
-            backgroundColor: '#fff',
-            transition: 'all 500ms',
-            borderBottom: '4px solid #D05270',
-            zIndex: 25
-          }}
-        >
-          {["Home", "About", "Contact"].map((item) => {
-            let currentItm = activeFilter === item;
-            return (
-              <Typography
-                onClick={() => {
-                  setActiveFilter(item);
-                  if (item === "Home") {
-                    navigate("/");
-                  } else {
-                    navigate(`/${item}`);
-                  }
-                }}
-                sx={{
-                  cursor: "pointer",
-                  color: !currentItm ? "#424242" : "#5A47AB",
-                  fontSize: "14px",
-                  textTransform: "uppercase",
-                  fontWeight: "700",
-                  // display: navbarState ? 'flex' : 'none'
-                }}
-                key={item}
-              >
-                {item}
-              </Typography>
-            );
-          })}
-        </Box>
+        sx={{
+          display: {
+            xs: "flex",
+            sm: "none",
+          },
+          justifyContent: "center",
+          alignItems: "center",
+          gap: navbarState ? 3 : 0,
+          flexDirection: "column",
+          height: navbarState ? "100vh" : "0px",
+          width: "100%",
+          position: "fixed",
+          top: 0,
+          right: 0,
+          left: 0,
+          backgroundColor: "#fff",
+          transition: "all 500ms",
+          borderBottom: "4px solid #D05270",
+          zIndex: 25,
+        }}
+      >
+        {["Home", "About", "Contact"].map((item) => {
+          let currentItm = activeFilter === item;
+          return (
+            <Typography
+              onClick={() => {
+                setActiveFilter(item);
+                if (item === "Home") {
+                  navigate("/");
+                } else {
+                  navigate(`/${item}`);
+                }
+              }}
+              sx={{
+                cursor: "pointer",
+                color: !currentItm ? "#424242" : "#5A47AB",
+                fontSize: "14px",
+                textTransform: "uppercase",
+                fontWeight: "700",
+                // display: navbarState ? 'flex' : 'none'
+              }}
+              key={item}
+            >
+              {item}
+            </Typography>
+          );
+        })}
+      </Box>
     </>
   );
 };
