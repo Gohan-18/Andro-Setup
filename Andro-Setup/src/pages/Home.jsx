@@ -8,7 +8,8 @@ const Home = () => {
   const { activeFilter, setActiveFilter, navbarState, setNavbarState } = SetupState();
 
   useEffect(() => {
-    setNavbarState(false)
+    setActiveFilter('Home')
+    setNavbarState(false);
   }, [])
 
   return (

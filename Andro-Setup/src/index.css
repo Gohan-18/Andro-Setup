@@ -12,6 +12,16 @@ a {
   text-decoration: none;
 }
 
+.form-style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  gap: 20px;
+}
+
 ::-webkit-scrollbar {
   width: 4px;
   height: 5px;

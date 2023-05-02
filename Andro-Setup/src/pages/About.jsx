@@ -7,6 +7,7 @@ function About() {
   const { activeFilter, setActiveFilter, navbarState, setNavbarState } = SetupState();
 
   useEffect(() => {
+    setActiveFilter('About');
     setNavbarState(false)
   }, [])
   
