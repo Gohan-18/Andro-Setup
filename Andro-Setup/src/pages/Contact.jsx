@@ -2,8 +2,10 @@ import { Box, Button, TextField, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import { SetupState } from "../SetupContext";
 import SendIcon from "@mui/icons-material/Send";
+import { useForm, ValidationError } from '@formspree/react';
 
 const Contact = () => {
+  const [state, handleSubmit] = useForm("xknayzno");
   const { activeFilter, setActiveFilter, navbarState, setNavbarState } =
     SetupState();
 
@@ -12,11 +14,15 @@ const Contact = () => {
     setNavbarState(false);
   }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const { name, email, message } = e.target;
-    console.log(name.value, email.value, message.value);
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const { name, email, message } = e.target;
+  //   console.log(name.value, email.value, message.value);
+  // };
+
+  if (state.succeeded) {
+    console.log('Thanks for your message...')
+  }
 
   return (
     <>
@@ -49,19 +55,19 @@ const Contact = () => {
             label="Name"
             type="text"
             fullWidth
-            name="name"
+            name="Name"
             autoComplete="off"
           />
           <TextField
             required
             label="Email"
-            type="email"
+            type="Email"
             fullWidth
             name="email"
           />
           <TextField
             autoComplete="off"
-            name="message"
+            name="Message"
             required
             label="Message..."
             type="text"
