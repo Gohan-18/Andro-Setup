@@ -14,12 +14,6 @@ const Contact = () => {
     setNavbarState(false);
   }, []);
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const { name, email, message } = e.target;
-  //   console.log(name.value, email.value, message.value);
-  // };
-
   if (state.succeeded) {
     console.log('Thanks for your message...')
   }
