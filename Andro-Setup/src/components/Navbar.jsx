@@ -75,8 +75,6 @@ const Navbar = () => {
                 xs: "flex",
                 sm: "none",
               },
-              // width: '20px',
-              // height: '20px'
             }}
           >
             {navbarState ? (
