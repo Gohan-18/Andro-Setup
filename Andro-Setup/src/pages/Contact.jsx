@@ -1,13 +1,19 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { SetupState } from "../SetupContext";
 import SendIcon from "@mui/icons-material/Send";
 import { useForm, ValidationError } from '@formspree/react';
 
 const Contact = () => {
   const [state, handleSubmit] = useForm("xknayzno");
-  const { activeFilter, setActiveFilter, navbarState, setNavbarState } =
-    SetupState();
+  const { activeFilter, setActiveFilter, navbarState, setNavbarState, formData, setFormData } = SetupState();
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   email: "",
+  //   message: ""
+  // })
+
+  // console.log(formData)
 
   useEffect(() => {
     setActiveFilter("Contact");
@@ -15,7 +21,12 @@ const Contact = () => {
   }, []);
 
   if (state.succeeded) {
-    console.log('Thanks for your message...')
+    console.log('Thanks for your message...');
+    setFormData({
+      name: "",
+      email: "",
+      message: ""
+    })
   }
 
   return (
@@ -51,6 +62,8 @@ const Contact = () => {
             fullWidth
             name="Name"
             autoComplete="off"
+            value={formData?.name}
+            onChange={(e) => setFormData((prev) => ({...prev, name: e.target.value}))}
           />
           <TextField
             required
@@ -58,6 +71,8 @@ const Contact = () => {
             type="Email"
             fullWidth
             name="email"
+            value={formData?.email}
+            onChange={(e) => setFormData((prev) => ({...prev, email: e.target.value}))}
           />
           <TextField
             autoComplete="off"
@@ -69,6 +84,8 @@ const Contact = () => {
             maxRows={4}
             minRows={4}
             fullWidth
+            value={formData?.message}
+            onChange={(e) => setFormData((prev) => ({...prev, message: e.target.value}))}
           />
           <Button
             type="submit"
