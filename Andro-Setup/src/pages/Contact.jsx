@@ -1,4 +1,4 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { Alert, Box, Button, Snackbar, TextField, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { SetupState } from "../SetupContext";
 import SendIcon from "@mui/icons-material/Send";
@@ -7,6 +7,19 @@ import { useForm, ValidationError } from '@formspree/react';
 const Contact = () => {
   const [state, handleSubmit] = useForm("xknayzno");
   const { activeFilter, setActiveFilter, navbarState, setNavbarState, formData, setFormData } = SetupState();
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
   // const [formData, setFormData] = useState({
   //   name: "",
   //   email: "",
@@ -20,13 +33,14 @@ const Contact = () => {
     setNavbarState(false);
   }, []);
 
-  if (state.succeeded) {
+  if (state.succeeded){
     console.log('Thanks for your message...');
-    setFormData({
-      name: "",
-      email: "",
-      message: ""
-    })
+    // handleClick();
+    // setFormData({
+    //   name: "",
+    //   email: "",
+    //   message: ""
+    // })
   }
 
   return (
@@ -96,6 +110,13 @@ const Contact = () => {
             Send
           </Button>
         </form>
+
+      <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+          Your Message Has Been Delivered!!
+        </Alert>
+      </Snackbar>
+
       </Box>
     </>
   );
