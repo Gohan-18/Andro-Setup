@@ -20,11 +20,6 @@ const Contact = () => {
 
     setOpen(false);
   };
-  // const [formData, setFormData] = useState({
-  //   name: "",
-  //   email: "",
-  //   message: ""
-  // })
 
   // console.log(formData)
 
