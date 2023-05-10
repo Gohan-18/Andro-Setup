@@ -63,7 +63,18 @@ const Contact = () => {
         >
           Contact Me
         </Typography>
-        <form onSubmit={handleSubmit} className="form-style">
+        <form 
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit(e).then(handleClick());
+            setFormData({
+              name: "",
+              email: "",
+              message: ""
+            })
+          }} 
+          className="form-style"
+        >
           <TextField
             required
             label="Name"
@@ -108,7 +119,7 @@ const Contact = () => {
 
       <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-          Your Message Has Been Delivered!!
+          Your message has been delivered!!
         </Alert>
       </Snackbar>
 
