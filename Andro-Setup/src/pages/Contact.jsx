@@ -30,12 +30,6 @@ const Contact = () => {
 
   if (state.succeeded){
     console.log('Thanks for your message...');
-    // handleClick();
-    // setFormData({
-    //   name: "",
-    //   email: "",
-    //   message: ""
-    // })
   }
 
   return (
