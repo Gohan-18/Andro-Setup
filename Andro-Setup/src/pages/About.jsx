@@ -15,9 +15,11 @@ function About() {
   return (
     <>
     <Box sx={{pt: '100px'}} >
-        <Typography>
-            About
-        </Typography>
+        <Box>
+          <Typography>
+            So, you have been using same boring home screen that you get shipped as default from your android device manufacturer, or what your kid set up for you, by basic changes like changinf the dafault wallpaper, and you want to make it look different, something of your taste. But clueless how to go by that!!? Look no further than Andro/Setup.
+          </Typography>
+        </Box>
     </Box>
     </>
   )
