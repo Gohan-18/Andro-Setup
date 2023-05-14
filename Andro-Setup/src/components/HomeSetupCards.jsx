@@ -12,6 +12,7 @@ import React, { useEffect, useState } from "react";
 import { request, gql } from "graphql-request";
 import { SetupState } from "../SetupContext";
 import { useNavigate } from "react-router-dom";
+import SkeletonLoading from "./SkeletonLoading";
 // import { request, gql } from "graphql-request";
 // import { SetupState } from "../src/SetupContext";
 
@@ -126,11 +127,10 @@ const HomeSetups = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            flexDirection: "column",
             py: "50px",
           }}
         >
-          <CircularProgress />
+          <SkeletonLoading />
         </Box>
       ) : (
         <Box
