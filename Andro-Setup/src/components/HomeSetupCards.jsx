@@ -69,10 +69,6 @@ const HomeSetups = () => {
       });
   };
 
-  // useEffect(() => {
-  //   getAllSetups();
-  // }, []);
-
   if (!homeSetups.length) {
     getAllSetups();
   }
@@ -310,60 +306,3 @@ const HomeSetups = () => {
 };
 
 export default HomeSetups;
-
-{
-  /* <CardContent 
-            sx={{
-                display: 'flex', 
-                flexDirection: 'column', 
-                alignItems: 'flex-start', 
-                justifyContent: 'center', 
-                width: '100%'
-            }} >
-            <Typography 
-                variant='h5' 
-                component='h2' 
-                gutterBottom 
-                sx={{
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                display: '-webkit-box',
-                WebkitLineClamp: '2',
-                WebkitBoxOrient: 'vertical',
-                fontSize: '14px', 
-                fontWeight: '500'
-            }}>
-            {snippet.title}
-            </Typography>
-            <Typography  
-                gutterBottom 
-                paragraph
-                color='text.secondary'
-                sx={{
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                display: '-webkit-box',
-                WebkitLineClamp: '2',
-                WebkitBoxOrient: 'vertical',
-                fontSize: '12px', 
-                fontWeight: '500'
-            }}>
-                {snippet.channelTitle}
-            </Typography>
-            <Typography  
-                gutterBottom 
-                paragraph
-                color='text.secondary'
-                sx={{
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                display: '-webkit-box',
-                WebkitLineClamp: '2',
-                WebkitBoxOrient: 'vertical',
-                fontSize: '10px', 
-                fontWeight: '500'
-            }}>
-                Published at: {snippet.publishedAt.slice(0,10)}
-            </Typography>
-            </CardContent> */
-}
