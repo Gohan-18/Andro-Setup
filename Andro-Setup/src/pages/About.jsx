@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { SetupState } from "../SetupContext";
 
 function About() {
-  const { activeFilter, setActiveFilter, navbarState, setNavbarState } =
+  const { setActiveFilter, setNavbarState } =
     SetupState();
 
   useEffect(() => {
