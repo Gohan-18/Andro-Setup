@@ -10,7 +10,7 @@ const SingleSetup = () => {
   const { setupid } = params;
   const navigate = useNavigate();
   console.log(singleSetup);
-  
+
   const {
     setupImage,
     title,
@@ -24,21 +24,20 @@ const SingleSetup = () => {
   } = singleSetup;
 
   useEffect(() => {
-    if(!title) navigate('/')
+    if (!title) navigate("/");
 
     // {
     //   for(let setup of homeSetups) {
     //     console.log(setup?.node?.setup_id)
     //     if(setup?.node?.setup_id === setupid) {
     //       setSingleSetup(setup)
-    //     } 
+    //     }
     //     else {
     //       navigate('/')
     //     }
     //   }
     // }
-
-  }, [])
+  }, []);
 
   // console.log(homeSetups)
 
@@ -83,7 +82,7 @@ const SingleSetup = () => {
           sx={{
             width: "100%",
             // height: "100%",
-            maxHeight: '500px',
+            maxHeight: "500px",
             objectFit: "cover",
             backgroundColor: "#f8f9fa",
             borderRadius: {

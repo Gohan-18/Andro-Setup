@@ -138,10 +138,10 @@ const HomeSetups = () => {
             flexDirection: "column",
             py: "50px",
             px: {
-              xs: '10px',
-              sm: '20px',
-              md: '0px'
-            }
+              xs: "10px",
+              sm: "20px",
+              md: "0px",
+            },
           }}
         >
           <Grid container spacing={5} sx={{ py: "50px" }}>
