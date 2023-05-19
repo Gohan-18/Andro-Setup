@@ -139,19 +139,24 @@ const SingleSetup = () => {
           >
             Launcher :
           </Typography>
-          <Typography
-            sx={{
-              fontSize: {
-                xs: "15px",
-                md: "20px",
-              },
-              fontWeight: 500,
-              color: "#457b9d",
-            }}
+          <a
+            target="_blank"
+            href={`https://play.google.com/store/search?q=${launcher}&c=apps`}
           >
-            {" "}
-            {launcher}
-          </Typography>
+            <Typography
+              sx={{
+                fontSize: {
+                  xs: "15px",
+                  md: "20px",
+                },
+                fontWeight: 500,
+                color: "#457b9d",
+              }}
+            >
+              {" "}
+              {launcher}
+            </Typography>
+          </a>
         </Box>
         <Box
           sx={{
@@ -174,19 +179,24 @@ const SingleSetup = () => {
           >
             Icon Pack :
           </Typography>
-          <Typography
-            sx={{
-              fontSize: {
-                xs: "15px",
-                md: "20px",
-              },
-              fontWeight: 500,
-              color: "#457b9d",
-            }}
+          <a
+            target="_blank"
+            href={`https://play.google.com/store/search?q=${iconPack}&c=apps`}
           >
-            {" "}
-            {iconPack}
-          </Typography>
+            <Typography
+              sx={{
+                fontSize: {
+                  xs: "15px",
+                  md: "20px",
+                },
+                fontWeight: 500,
+                color: "#457b9d",
+              }}
+            >
+              {" "}
+              {iconPack}
+            </Typography>
+          </a>
         </Box>
         <Box
           sx={{
