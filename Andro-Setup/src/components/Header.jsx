@@ -88,7 +88,6 @@ const Header = () => {
                 },
                 fontWeight: "400",
                 lineHeight: "25px",
-                //   textTransform: 'capitalize'
               }}
             >
               Got fed up looking at your regular, boring Android home screen
