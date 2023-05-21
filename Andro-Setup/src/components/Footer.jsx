@@ -1,8 +1,13 @@
+import { Container, Typography } from '@mui/material'
 import React from 'react'
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <>
+      <Container maxWidth="lg" >
+        <Typography>Footer</Typography>
+      </Container>
+    </>
   )
 }
 
