@@ -72,6 +72,7 @@ const HomeSetups = () => {
   if (!homeSetups.length) {
     getAllSetups();
   }
+  
 
   // useEffect(() => {
   //   const fetchSetups = async () => {

@@ -53,7 +53,10 @@ const Navbar = () => {
           }}
         >
           <Typography
-            onClick={() => navigate("/")}
+            onClick={() => {
+              navigate("/");
+              window.scrollTo(0, 0);
+            }}
             sx={{
               fontSize: {
                 xs: "22px",
@@ -199,6 +202,7 @@ const Navbar = () => {
                 setActiveFilter(item);
                 if (item === "Home") {
                   navigate("/");
+                  window.scrollTo(0, 0);
                 } else {
                   navigate(`/${item}`);
                 }

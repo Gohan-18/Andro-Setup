@@ -25,6 +25,9 @@ const Footer = () => {
         <Typography sx={{ color: "#adb5bd", fontSize: "12px" }}>
           All rights reserved ©️ Prabhat
         </Typography>
+        <Typography sx={{ color: "#adb5bd", fontSize: "12px", pt: '5px' }}>
+          UI Template Inspiration from <a href="https://www.figma.com/@dogu" target="_blank" >@Doğukan Erel</a> 
+        </Typography>
         <Socials />
       </Container>
     </>

@@ -24,6 +24,7 @@ const Contact = () => {
   // console.log(formData)
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setActiveFilter("Contact");
     setNavbarState(false);
   }, []);

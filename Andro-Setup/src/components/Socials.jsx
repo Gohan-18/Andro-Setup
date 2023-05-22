@@ -7,19 +7,17 @@ import { Box } from '@mui/material';
 const Socials = () => {
   return (
     <>
-    {/* <section> */}
-    <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5, pt: '20px'}} >
+    <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 3, pt: '10px'}} >
         <a href="https://www.instagram.com/prab_hat18/" target="_blank" >
-            <InstagramIcon sx={{fill: '#f4f4f4'}} />
+            <InstagramIcon sx={{fill: '#f4f4f4', "&:hover":{scale: '1.2'}, transition: 'all 300ms', width: {xs:'25px', md: '30px'}}} />
         </a>
         <a href="https://www.linkedin.com/in/prabhat187/" target="_blank" >
-            <LinkedInIcon sx={{fill: '#f4f4f4'}} />
+            <LinkedInIcon sx={{fill: '#f4f4f4', "&:hover":{scale: '1.2'}, transition: 'all 300ms', width: {xs:'25px', md: '30px'}}} />
         </a>
-        <a href="https://t.me/Prab_hat18/" target="_blank" >
-            <TwitterIcon sx={{fill: '#f4f4f4'}} />
+        <a href="https://www.twitter.com/prab_hat18" target="_blank" >
+            <TwitterIcon sx={{fill: '#f4f4f4', "&:hover":{scale: '1.2'}, transition: 'all 300ms', width: {xs:'25px', md: '30px'}}} />
         </a>
     </Box>
-    {/* </section> */}
     </>
   )
 }

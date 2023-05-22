@@ -9,11 +9,12 @@ function About() {
   useEffect(() => {
     setActiveFilter("About");
     setNavbarState(false);
+    window.scrollTo(0, 0);
   }, []);
 
   return (
     <>
-      <Container maxWidth="md" sx={{ pt: "100px" }}>
+      <Container maxWidth="md" sx={{pt: '100px',}} >
         <Box
           sx={{
             py: "25px",
@@ -46,7 +47,7 @@ function About() {
               color: "#424242",
               lineHeight: {
                 xs: '25px',
-                md: '30px'
+                // md: '30px'
               },
               mb: {xs: '20px', md: '25px'}
             }}
@@ -68,7 +69,7 @@ function About() {
               color: "#424242",
               lineHeight: {
                 xs: '25px',
-                md: '30px'
+                // md: '30px'
               },
               mb: {xs: '20px', md: '25px'}
             }}
@@ -92,7 +93,7 @@ function About() {
               color: "#424242",
               lineHeight: {
                 xs: '25px',
-                md: '30px'
+                // md: '30px'
               },
               mb: {xs: '20px', md: '25px'}
             }}

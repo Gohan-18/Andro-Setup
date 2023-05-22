@@ -25,7 +25,7 @@ const SingleSetup = () => {
 
   useEffect(() => {
     if (!title) navigate("/");
-
+    window.scrollTo(0, 0)
     // {
     //   for(let setup of homeSetups) {
     //     console.log(setup?.node?.setup_id)
