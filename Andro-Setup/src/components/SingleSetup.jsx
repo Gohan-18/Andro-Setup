@@ -44,19 +44,20 @@ const SingleSetup = () => {
   return (
     <Box
       sx={{
+        height: {sm:'100vh'},
         pt: "100px",
         display: "flex",
         alignItems: {
           xs: "center",
-          md: "start",
+          sm: "start",
         },
         justifyContent: {
           xs: "start",
-          md: "space-between",
+          sm: "space-between",
         },
         flexDirection: {
           xs: "column",
-          md: "row",
+          sm: "row",
         },
         width: "100%",
       }}

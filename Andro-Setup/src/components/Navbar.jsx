@@ -87,7 +87,7 @@ const Navbar = () => {
             )}
           </IconButton>
           {/* </Box> */}
-
+          {/* <a href="https://www.linkedin.com/in/prabhat187" target="_blank" > */}
           <Box
             sx={{
               backgroundColor: "#5A47AB",

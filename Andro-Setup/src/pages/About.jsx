@@ -14,7 +14,7 @@ function About() {
 
   return (
     <>
-      <Container maxWidth="md" sx={{pt: '100px',}} >
+      <Container maxWidth="md" sx={{pt: '100px', height:{lg: '100vh'}}} >
         <Box
           sx={{
             py: "25px",
