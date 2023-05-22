@@ -19,7 +19,6 @@ function About() {
             py: "25px",
             display: "flex",
             flexDirection: "column",
-            gap: 4,
             alignItems: "center",
             justifyContent: "center",
           }}
@@ -32,16 +31,24 @@ function About() {
               borderBottom: "4px solid #5A47AB",
               width: "fit-content",
               px: "15px",
+              mb: '25px'
             }}
           >
             About
           </Typography>
           <Typography
             sx={{
-              fontSize: "20px",
+              fontSize: {
+                xs: '16px',
+                md: '20px'
+              },
               fontWeight: 500,
               color: "#424242",
-              lineHeight: "30px",
+              lineHeight: {
+                xs: '25px',
+                md: '30px'
+              },
+              mb: {xs: '20px', md: '25px'}
             }}
           >
             So, you have been using same boring home screen that you get shipped
@@ -53,10 +60,17 @@ function About() {
           </Typography>
           <Typography
             sx={{
-              fontSize: "20px",
+              fontSize: {
+                xs: '16px',
+                md: '20px'
+              },
               fontWeight: 500,
               color: "#424242",
-              lineHeight: "30px",
+              lineHeight: {
+                xs: '25px',
+                md: '30px'
+              },
+              mb: {xs: '20px', md: '25px'}
             }}
           >
             At Andro/Setup, we believe that your Android home screen is a
@@ -70,10 +84,17 @@ function About() {
           </Typography>
           <Typography
             sx={{
-              fontSize: "20px",
+              fontSize: {
+                xs: '16px',
+                md: '20px'
+              },
               fontWeight: 500,
               color: "#424242",
-              lineHeight: "30px",
+              lineHeight: {
+                xs: '25px',
+                md: '30px'
+              },
+              mb: {xs: '20px', md: '25px'}
             }}
           >
             Our goal is to inspire you and help you transform your Android
