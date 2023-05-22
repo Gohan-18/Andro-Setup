@@ -85,7 +85,7 @@ function About() {
           </Typography>
         </Box>
       </Container>
-      <Footer/>
+      {/* <Footer/> */}
     </>
   );
 }
