@@ -84,8 +84,8 @@ function About() {
             popular launchers and easily customizable to suit your preferences.
           </Typography>
         </Box>
-        <Footer/>
       </Container>
+      <Footer/>
     </>
   );
 }
