@@ -277,23 +277,28 @@ const SingleSetup = () => {
             </Typography>
           ))}
         </Box>
-        {wallpaper?.length && (
-          <Box
-            sx={{
-              display: "flex",
-              width: "100%",
-              justifyContent: "start",
-              alignItems: "center",
-              pt: "30px",
-            }}
-          >
-            <a href={wallpaper} download>
-              <Button variant="contained" size="small">
-                Download Wallpaper
-              </Button>
-            </a>
-          </Box>
-        )}
+        {/* {wallpaper?.length && ( */}
+        <Box
+          sx={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "start",
+            alignItems: "center",
+            pt: "30px",
+          }}
+        >
+          <a href={wallpaper} download>
+            <Button
+              disabled={!wallpaper?.length ? true : false}
+              variant="contained"
+              // size="small"
+              sx={{ fontSize: { xs: "12px", sm: '14px', md: "16px" } }}
+            >
+              Download Wallpaper
+            </Button>
+          </a>
+        </Box>
+        {/* )} */}
       </Box>
     </Box>
   );
