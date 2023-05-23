@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import SegmentRoundedIcon from "@mui/icons-material/SegmentRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import { SetupState } from "../SetupContext";
+import Link from "@mui/material/Link";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -70,7 +71,6 @@ const Navbar = () => {
             Andro/Setup
           </Typography>
 
-          {/* <Box> */}
           <IconButton
             onClick={() => setNavbarState(!navbarState)}
             sx={{
@@ -86,9 +86,10 @@ const Navbar = () => {
               <SegmentRoundedIcon sx={{ width: "28px", height: "28px" }} />
             )}
           </IconButton>
-          {/* </Box> */}
-          {/* <a href="https://www.linkedin.com/in/prabhat187" target="_blank" > */}
-          <Box
+
+          <Link
+            href="https://www.linkedin.com/in/prabhat187"
+            target="_blank"
             sx={{
               backgroundColor: "#5A47AB",
               color: "#FFFFFF",
@@ -131,7 +132,7 @@ const Navbar = () => {
             >
               Hire Me!!
             </Typography>
-          </Box>
+          </Link>
         </Box>
 
         <Box
