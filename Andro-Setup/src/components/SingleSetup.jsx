@@ -72,7 +72,7 @@ const SingleSetup = () => {
           display: "flex",
           alignItems: "start",
           justifyContent: "center",
-          px: "30px",
+          px: {xs:"10px", sm: '30px'},
           py: "10px",
         }}
       >
@@ -102,8 +102,9 @@ const SingleSetup = () => {
           justifyContent: "start",
           flexDirection: "column",
           width: { xs: "100%", lg: "50%" },
-          my: "50px",
+          my: {sm: "50px"},
           px: { xs: "10px", md: "30px" },
+          mb: {xs: '50px', sm: '0px'}
         }}
       >
         <Typography
@@ -114,7 +115,9 @@ const SingleSetup = () => {
             },
             fontWeight: 600,
             color: "#D05270",
-            pb: "10px",
+            mb: "10px",
+            borderBottom: '4px solid #D05270',
+            pr: '15px'
           }}
         >
           {title}{" "}
@@ -152,6 +155,7 @@ const SingleSetup = () => {
                 },
                 fontWeight: 500,
                 color: "#457b9d",
+                textAlign: 'center'
               }}
             >
               {" "}

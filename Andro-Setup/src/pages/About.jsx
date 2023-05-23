@@ -14,9 +14,10 @@ function About() {
 
   return (
     <>
-      <Container maxWidth="md" sx={{pt: '100px', height:{lg: '100vh'}}} >
+      <Container maxWidth="md" sx={{pt: {xs: '100px', lg: '0px'}, }} >
         <Box
           sx={{
+            height:{lg: '100vh'},
             py: "25px",
             display: "flex",
             flexDirection: "column",
