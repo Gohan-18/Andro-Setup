@@ -29,13 +29,13 @@ export const getAllSetups = async () => {
   const { data } = await request(graphqlAPI, query)
   .then((result) => {
       const data = result.setups_Connection.edges;
-      console.log(data)
+      // console.log(data)
       setHomeSetups(data);
   })
   .catch((error) => {
-      console.log(error)
+      // console.log(error)
   })
 
-  console.log(data)
+  // console.log(data)
   return data;
 };

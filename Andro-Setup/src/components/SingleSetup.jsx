@@ -6,10 +6,10 @@ import { useNavigate, useParams } from "react-router-dom";
 const SingleSetup = () => {
   const { singleSetup, setSingleSetup, homeSetups } = SetupState();
   const params = useParams();
-  console.log(params);
+  // console.log(params);
   const { setupid } = params;
   const navigate = useNavigate();
-  console.log(singleSetup);
+  // console.log(singleSetup);
 
   const {
     setupImage,
@@ -25,7 +25,7 @@ const SingleSetup = () => {
 
   useEffect(() => {
     if (!title) navigate("/");
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
     // {
     //   for(let setup of homeSetups) {
     //     console.log(setup?.node?.setup_id)
@@ -44,7 +44,7 @@ const SingleSetup = () => {
   return (
     <Box
       sx={{
-        height: {sm:'100vh'},
+        height: { sm: "100vh" },
         pt: "100px",
         display: "flex",
         alignItems: {
@@ -72,7 +72,7 @@ const SingleSetup = () => {
           display: "flex",
           alignItems: "start",
           justifyContent: "center",
-          px: {xs:"10px", sm: '30px'},
+          px: { xs: "10px", sm: "30px" },
           py: "10px",
         }}
       >
@@ -102,9 +102,9 @@ const SingleSetup = () => {
           justifyContent: "start",
           flexDirection: "column",
           width: { xs: "100%", lg: "50%" },
-          my: {sm: "50px"},
+          my: { sm: "50px" },
           px: { xs: "10px", md: "30px" },
-          mb: {xs: '50px', sm: '0px'}
+          mb: { xs: "50px", sm: "0px" },
         }}
       >
         <Typography
@@ -116,8 +116,8 @@ const SingleSetup = () => {
             fontWeight: 600,
             color: "#D05270",
             mb: "10px",
-            borderBottom: '4px solid #D05270',
-            pr: '15px'
+            borderBottom: "4px solid #D05270",
+            pr: "15px",
           }}
         >
           {title}{" "}
@@ -155,7 +155,7 @@ const SingleSetup = () => {
                 },
                 fontWeight: 500,
                 color: "#457b9d",
-                textAlign: 'center'
+                textAlign: "center",
               }}
             >
               {" "}
@@ -277,21 +277,23 @@ const SingleSetup = () => {
             </Typography>
           ))}
         </Box>
-        <Box
-          sx={{
-            display: "flex",
-            width: "100%",
-            justifyContent: "start",
-            alignItems: "center",
-            pt: "30px",
-          }}
-        >
-          <a href={wallpaper} download>
-            <Button variant="contained" size="small">
-              Download Wallpaper
-            </Button>
-          </a>
-        </Box>
+        {wallpaper?.length && (
+          <Box
+            sx={{
+              display: "flex",
+              width: "100%",
+              justifyContent: "start",
+              alignItems: "center",
+              pt: "30px",
+            }}
+          >
+            <a href={wallpaper} download>
+              <Button variant="contained" size="small">
+                Download Wallpaper
+              </Button>
+            </a>
+          </Box>
+        )}
       </Box>
     </Box>
   );

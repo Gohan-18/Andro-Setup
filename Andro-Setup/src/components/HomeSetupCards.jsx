@@ -30,7 +30,7 @@ const HomeSetups = () => {
     singleSetup,
     setSingleSetup,
   } = SetupState();
-  console.log(singleSetup);
+  // console.log(singleSetup);
   // const [ limitedSetups, setLimitedSetups ] = useState([]);
   // const [toggleShowAll, setToggleShowAll] = useState(false);
   const navigate = useNavigate();
@@ -65,7 +65,7 @@ const HomeSetups = () => {
         setHomeSetups(data);
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
   };
 
@@ -113,7 +113,7 @@ const HomeSetups = () => {
     }
   }
 
-  console.log(limitedSetup);
+  // console.log(limitedSetup);
 
   return (
     <>
