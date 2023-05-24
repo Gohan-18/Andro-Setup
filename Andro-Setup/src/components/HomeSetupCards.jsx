@@ -4,7 +4,6 @@ import {
   Card,
   CardActionArea,
   CardMedia,
-  CircularProgress,
   Grid,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
@@ -13,8 +12,6 @@ import { request, gql } from "graphql-request";
 import { SetupState } from "../SetupContext";
 import { useNavigate } from "react-router-dom";
 import SkeletonLoading from "./SkeletonLoading";
-// import { request, gql } from "graphql-request";
-// import { SetupState } from "../src/SetupContext";
 
 const graphqlAPI = import.meta.env.VITE_GRAPHCMS_ENDPOINT;
 
@@ -47,7 +44,9 @@ const HomeSetups = () => {
               setup_id
               title
               uploadedDate
-              wallpaper
+              wallpaper {
+                url
+              }
               widgets
               setupImage {
                 url
@@ -65,12 +64,12 @@ const HomeSetups = () => {
         setHomeSetups(data);
       })
       .catch((error) => {
-        // console.log(error);
+        console.log(error);
       });
   };
 
   if (!homeSetups.length) {
-    getAllSetups();
+    getAllSetups()
   }
   
 
