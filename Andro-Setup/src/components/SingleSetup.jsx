@@ -2,6 +2,7 @@ import { Box, Button, CardMedia, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import { SetupState } from "../SetupContext";
 import { useNavigate, useParams } from "react-router-dom";
+import LinkIcon from "@mui/icons-material/Link";
 
 const SingleSetup = () => {
   const { singleSetup, setSingleSetup, homeSetups } = SetupState();
@@ -105,6 +106,7 @@ const SingleSetup = () => {
           my: { sm: "50px" },
           px: { xs: "10px", md: "30px" },
           mb: { xs: "50px", sm: "0px" },
+          // gap: 1
         }}
       >
         <Typography
@@ -147,20 +149,29 @@ const SingleSetup = () => {
             target="_blank"
             href={`https://play.google.com/store/search?q=${launcher}&c=apps`}
           >
-            <Typography
+            <Button
+              startIcon={
+                <LinkIcon
+                  sx={{
+                    width: { xs: "14px", md: "16px" },
+                    transform: "rotate(-45deg)",
+                  }}
+                />
+              }
               sx={{
                 fontSize: {
                   xs: "15px",
-                  md: "20px",
+                  md: "17px",
                 },
                 fontWeight: 500,
                 color: "#457b9d",
                 textAlign: "center",
+                padding: "0 5px",
               }}
             >
               {" "}
               {launcher}
-            </Typography>
+            </Button>
           </a>
         </Box>
         <Box
@@ -188,19 +199,29 @@ const SingleSetup = () => {
             target="_blank"
             href={`https://play.google.com/store/search?q=${iconPack}&c=apps`}
           >
-            <Typography
+            <Button
+              startIcon={
+                <LinkIcon
+                  sx={{
+                    width: { xs: "14px", md: "16px" },
+                    transform: "rotate(-45deg)",
+                  }}
+                />
+              }
               sx={{
                 fontSize: {
                   xs: "15px",
-                  md: "20px",
+                  md: "17px",
                 },
                 fontWeight: 500,
                 color: "#457b9d",
+                textAlign: "center",
+                padding: "0 5px",
               }}
             >
               {" "}
               {iconPack}
-            </Typography>
+            </Button>
           </a>
         </Box>
         <Box
@@ -210,6 +231,8 @@ const SingleSetup = () => {
             justifyContent: "start",
             alignItems: "center",
             gap: 1,
+            mb: "5px",
+            mt: "3px",
           }}
         >
           <Typography
@@ -228,7 +251,7 @@ const SingleSetup = () => {
             sx={{
               fontSize: {
                 xs: "15px",
-                md: "20px",
+                md: "18px",
               },
               fontWeight: 500,
               color: "#457b9d",
@@ -266,7 +289,7 @@ const SingleSetup = () => {
               sx={{
                 fontSize: {
                   xs: "15px",
-                  md: "20px",
+                  md: "18px",
                 },
                 fontWeight: 500,
                 color: "#457b9d",
@@ -292,7 +315,7 @@ const SingleSetup = () => {
               disabled={!wallpaper?.length ? true : false}
               variant="contained"
               // size="small"
-              sx={{ fontSize: { xs: "12px", sm: '14px', md: "16px" } }}
+              sx={{ fontSize: { xs: "12px", sm: "14px", md: "16px" } }}
             >
               Download Wallpaper
             </Button>
