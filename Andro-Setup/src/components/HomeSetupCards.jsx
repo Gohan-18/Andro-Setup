@@ -57,15 +57,23 @@ const HomeSetups = () => {
       }
     `;
 
-    await request(graphqlAPI, query)
-      .then((result) => {
-        const data = result.setups_Connection.edges;
-        // console.log(data)
-        setHomeSetups(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    try {
+      const data = await request(graphqlAPI, query)
+      // console.log(data.setups_Connection.edges);
+      setHomeSetups(data.setups_Connection.edges);
+    } catch (error) {
+      console.log(error)
+    }
+
+    // await request(graphqlAPI, query)
+    //   .then((result) => {
+    //     const data = result.setups_Connection.edges;
+    //     // console.log(data)
+    //     setHomeSetups(data);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   };
 
   if (!homeSetups.length) {
