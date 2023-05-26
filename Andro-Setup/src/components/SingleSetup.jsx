@@ -10,7 +10,7 @@ const SingleSetup = () => {
   // console.log(params);
   const { setupid } = params;
   const navigate = useNavigate();
-  // console.log(singleSetup);
+  console.log(singleSetup);
 
   const {
     setupImage,
@@ -310,9 +310,9 @@ const SingleSetup = () => {
             pt: "30px",
           }}
         >
-          <a href={wallpaper} download>
+          <a href={wallpaper?.url} target="_blank" download>
             <Button
-              disabled={!wallpaper?.length ? true : false}
+              disabled={!wallpaper?.url?.length ? true : false}
               variant="contained"
               // size="small"
               sx={{ fontSize: { xs: "12px", sm: "14px", md: "16px" } }}
