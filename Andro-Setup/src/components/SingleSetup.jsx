@@ -1,4 +1,4 @@
-import { Box, Button, CardMedia, Typography } from "@mui/material";
+import { Box, Button, CardMedia, Link, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import { SetupState } from "../SetupContext";
 import { useNavigate, useParams } from "react-router-dom";
@@ -124,6 +124,7 @@ const SingleSetup = () => {
         >
           {title}{" "}
         </Typography>
+
         <Box
           sx={{
             display: "flex",
@@ -131,6 +132,7 @@ const SingleSetup = () => {
             justifyContent: "start",
             alignItems: "center",
             gap: 1,
+            // mb: '5px'
           }}
         >
           <Typography
@@ -145,34 +147,48 @@ const SingleSetup = () => {
           >
             Launcher :
           </Typography>
-          <a
+          <Link
             target="_blank"
             href={`https://play.google.com/store/search?q=${launcher}&c=apps`}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "start",
+              position: "relative",
+              textDecoration: "none",
+            }}
           >
-            <Button
-              startIcon={
-                <LinkIcon
-                  sx={{
-                    width: { xs: "14px", md: "16px" },
-                    transform: "rotate(-45deg)",
-                  }}
-                />
-              }
+            <LinkIcon
+              sx={{
+                width: { xs: "14px", md: "18px" },
+                transform: "rotate(-45deg)",
+                position: "absolute",
+                color: "#457b9d",
+              }}
+            />
+            <Typography
               sx={{
                 fontSize: {
                   xs: "15px",
-                  md: "17px",
+                  md: "20px",
                 },
                 fontWeight: 500,
                 color: "#457b9d",
                 textAlign: "center",
-                padding: "0 5px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "start",
+                gap: 0.5,
+                "&:hover": {
+                  textDecoration: "underline",
+                },
+                pl: "22px",
               }}
             >
               {" "}
               {launcher}
-            </Button>
-          </a>
+            </Typography>
+          </Link>
         </Box>
         <Box
           sx={{
@@ -181,6 +197,7 @@ const SingleSetup = () => {
             justifyContent: "start",
             alignItems: "center",
             gap: 1,
+            // mb: '5px'
           }}
         >
           <Typography
@@ -195,35 +212,50 @@ const SingleSetup = () => {
           >
             Icon Pack :
           </Typography>
-          <a
+          <Link
             target="_blank"
             href={`https://play.google.com/store/search?q=${iconPack}&c=apps`}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "start",
+              position: "relative",
+              textDecoration: "none",
+            }}
           >
-            <Button
-              startIcon={
-                <LinkIcon
-                  sx={{
-                    width: { xs: "14px", md: "16px" },
-                    transform: "rotate(-45deg)",
-                  }}
-                />
-              }
+            <LinkIcon
+              sx={{
+                width: { xs: "14px", md: "18px" },
+                transform: "rotate(-45deg)",
+                position: "absolute",
+                color: "#457b9d",
+              }}
+            />
+            <Typography
               sx={{
                 fontSize: {
                   xs: "15px",
-                  md: "17px",
+                  md: "20px",
                 },
                 fontWeight: 500,
                 color: "#457b9d",
                 textAlign: "center",
-                padding: "0 5px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "start",
+                gap: 0.5,
+                "&:hover": {
+                  textDecoration: "underline",
+                },
+                pl: "22px",
               }}
             >
               {" "}
               {iconPack}
-            </Button>
-          </a>
+            </Typography>
+          </Link>
         </Box>
+
         <Box
           sx={{
             display: "flex",
@@ -231,8 +263,6 @@ const SingleSetup = () => {
             justifyContent: "start",
             alignItems: "center",
             gap: 1,
-            mb: "5px",
-            mt: "3px",
           }}
         >
           <Typography
@@ -251,7 +281,7 @@ const SingleSetup = () => {
             sx={{
               fontSize: {
                 xs: "15px",
-                md: "18px",
+                md: "20px",
               },
               fontWeight: 500,
               color: "#457b9d",
@@ -261,6 +291,7 @@ const SingleSetup = () => {
             {uploadedDate}
           </Typography>
         </Box>
+
         <Box
           sx={{
             display: "flex",
@@ -288,19 +319,23 @@ const SingleSetup = () => {
               key={item}
               sx={{
                 fontSize: {
-                  xs: "15px",
-                  md: "18px",
+                  xs: "12px",
+                  md: "16px",
                 },
                 fontWeight: 500,
-                color: "#457b9d",
+                color: "#f4f4f4",
                 textTransform: "capitalize",
+                backgroundColor: "#457b9d",
+                px: "8px",
+                py: "3px",
+                borderRadius: "5px",
               }}
             >
-              {item}
+              {`${item}`}
             </Typography>
           ))}
         </Box>
-        {/* {wallpaper?.length && ( */}
+
         <Box
           sx={{
             display: "flex",
@@ -314,14 +349,12 @@ const SingleSetup = () => {
             <Button
               disabled={!wallpaper?.url?.length ? true : false}
               variant="contained"
-              // size="small"
               sx={{ fontSize: { xs: "12px", sm: "14px", md: "16px" } }}
             >
               Download Wallpaper
             </Button>
           </a>
         </Box>
-        {/* )} */}
       </Box>
     </Box>
   );
